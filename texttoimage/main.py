@@ -10,12 +10,26 @@ import argparse
 import textwrap
 from typing import List
 
+BLUE = "#A6A6FF"
+
+
+def find_ranges(s):
+    starts = [i for i, letter in enumerate(s) if letter == '[' and s[i + 1] == '[']
+    ends = [i for i, letter in enumerate(s) if letter == ']' and s[i - 1] == ']']
+    if not starts and not ends:
+        return [(len(s), len(s))]
+    if (not starts and ends) or (starts[0] > ends[0]):
+        starts.insert(0, 0)
+    if len(starts) > len(ends):
+        ends.insert(len(ends), len(s) - 1)
+    return list(zip(starts, [i + 1 for i in ends]))
+
 
 def parse_from_file(filename: str, di) -> List[str]:
     with open(filename, "r") as f:
         text = f.read()
         for eng, ger in di:
-            text = re.sub(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])", f"{eng}[[{ger}]]", text)
+            text = re.sub(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])", f"[{eng}][[{ger}]]", text)
         return [x for x in text.splitlines() if x]
 
 
@@ -88,17 +102,34 @@ def generate_image_from_text(
     )
     draw = ImageDraw.Draw(img)
 
-    offset: float = margin / 2
+    x_offset: float = margin / 2
+    y_offset: float = margin / 2
     for line in line_list:
-        draw.text((margin / 2, offset), line, font=img_font, fill=col_fg)
-        offset += img_font.getsize(line)[1]
+        ranges = find_ranges(line)
+        for counter, span in enumerate(ranges):
+            s2 = span[0]
+            e2 = span[1]
+            if counter == 0:
+                s1 = 0
+            else:
+                s1 = ranges[counter - 1][1]
+            e1 = s2
+            snippet1 = line[s1:e1]
+            snippet2 = line[s2:e2]
+            draw.text((x_offset, y_offset), snippet1, font=img_font, fill=col_fg)
+            draw.text((x_offset + img_font.getsize(snippet1)[0], y_offset), snippet2, font=img_font, fill=BLUE)
+            x_offset += img_font.getsize(snippet1 + snippet2)[0]
+        rest = line[ranges[-1][1]:]
+        draw.text((x_offset, y_offset), rest, font=img_font, fill=col_fg)
+        x_offset = margin / 2
+        y_offset += img_font.getsize(line)[1]
 
     img.save(image_out_path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        "A program to generate an image from a given text. Text can be provided either by a textfile or STDIN."
+        "A program to generate an image from a given text."
     )
     parser.add_argument(
         "-i",
@@ -128,7 +159,7 @@ if __name__ == "__main__":
         "--font-size",
         type=int,
         help="Sets the font size to be used to generate the image.",
-        default=11,
+        default=26,
     )
     parser.add_argument(
         "-m",

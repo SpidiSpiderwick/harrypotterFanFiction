@@ -44,7 +44,7 @@ if __name__ == '__main__':
         "--output",
         type=str,
         help="Path to the where the output shall be saved.",
-        default="out.txt",
+        default="prepped.txt",
         required=False,
     )
 

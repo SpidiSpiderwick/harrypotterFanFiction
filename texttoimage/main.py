@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import re
 
 from PIL import Image
 from PIL import ImageDraw
@@ -6,30 +7,41 @@ from PIL import ImageFont
 
 import os
 import argparse
-import sys
 import textwrap
 from typing import List
 
 
-def parse_from_file(filename: str) -> List[str]:
+def parse_from_file(filename: str, di) -> List[str]:
     with open(filename, "r") as f:
-        return [x.strip() for x in f.readlines()]
+        text = f.read()
+        for eng, ger in di:
+            text = re.sub(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])", f"{eng}[[{ger}]]", text)
+        return [x for x in text.splitlines() if x]
+
+
+def read_dictionary(dictionary_path, sep=','):
+    with open(dictionary_path, 'r') as f:
+        return list(x.split(sep) for x in f.readlines())
 
 
 def generate_images_from_file(
         chapter: str,
         image_out_folder: str,
+        dictionary_path: str,
         text_width: int = 50,
         font_size: int = 11,
         font: str = "./fonts/DejaVuSans.ttf",
         col_bg: str = "#ffffff",
         col_fg: str = "#000000",
-        margin: int = 6
+        margin: int = 6,
 ):
 
-    os.makedirs(image_out_folder)
+    if not os.path.exists(image_out_folder):
+        os.makedirs(image_out_folder)
 
-    for counter, line in enumerate(parse_from_file(chapter)):
+    di = read_dictionary(dictionary_path)
+
+    for counter, line in enumerate(parse_from_file(chapter, di)):
         generate_image_from_text(
             line,
             os.path.join(image_out_folder, f"{chapter}.{counter}.png"),
@@ -104,6 +116,14 @@ if __name__ == "__main__":
         required=False
     )
     parser.add_argument(
+        "-d",
+        "--dictionary",
+        type=str,
+        help="path to dictionary eng->ger",
+        default="",
+        required=False
+    )
+    parser.add_argument(
         "-s",
         "--font-size",
         type=int,
@@ -150,6 +170,7 @@ if __name__ == "__main__":
     generate_images_from_file(
         chapter=args.input_file,
         image_out_folder=args.output,
+        dictionary_path=args.dictionary,
         text_width=args.width,
         font=args.font_path,
         font_size=args.font_size,

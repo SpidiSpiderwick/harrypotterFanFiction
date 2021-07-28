@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import re
 
+import csv
+import json
+
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
@@ -18,24 +21,40 @@ def find_ranges(s):
     ends = [i for i, letter in enumerate(s) if letter == ']' and s[i - 1] == ']']
     if not starts and not ends:
         return [(len(s), len(s))]
-    if (not starts and ends) or (starts[0] > ends[0]):
-        starts.insert(0, 0)
     if len(starts) > len(ends):
         ends.insert(len(ends), len(s) - 1)
+    try:
+        if (not starts and ends) or (starts[0] > ends[0]):
+            starts.insert(0, 0)
+    except IndexError:
+        print(IndexError)
     return list(zip(starts, [i + 1 for i in ends]))
 
 
 def parse_from_file(filename: str, di) -> List[str]:
+    di = [(eng, ger, re.compile(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])")) for (eng, ger) in di]
     with open(filename, "r") as f:
-        text = f.read()
-        for eng, ger in di:
-            text = re.sub(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])", f"[{eng}][[{ger}]]", text)
-        return [x for x in text.splitlines() if x]
+        lines = f.readlines()
+
+        translations = [None] * len(lines)
+
+        for i, line in enumerate(lines):
+            translations[i] = {eng: ger for (eng, ger, regex) in di if regex.search(line)}
+
+        with open(filename + ".suggestions", "w") as sugg:
+            json.dump(translations, sugg)
+
+        # text = f.read()
+        # for eng, ger in di:
+            # text = re.sub(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])", f"[{eng}][[{ger}]]", text)
+
+        return lines
 
 
 def read_dictionary(dictionary_path, sep=','):
     with open(dictionary_path, 'r') as f:
-        return list(x.split(sep) for x in f.readlines())
+        spamreader = csv.reader(f, delimiter=sep, quotechar='"')
+        return dict((row[0], row[1]) for row in spamreader).items()
 
 
 def generate_images_from_file(

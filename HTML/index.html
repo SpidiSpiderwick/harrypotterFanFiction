@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
 
     <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <style>
+
+        div {
+            padding: 10px;
+        }
+        .container {
+            display:flex;
+        }
+        .fixed {
+            width: 300px;
+        }
+
+        .fixed_long {
+            width: 500px;
+        }
+        .flex-item {
+            flex-grow: 0;
+        }
+
+        .center {
+            margin: auto;
+            border: 2px solid green;
+            width: 50%;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -33,26 +59,30 @@
             <p>Explain why it's a bad answer</p>
         </negative-example>
     </crowd-instructions>
-
-    <div>
-        <p>What is your favorite color for a bird?</p>
-        <crowd-input name="favoriteColor" placeholder="example: pink" required></crowd-input>
+    <div class="container">
+        <div class="center">
+            <h4>Vorheriger Kontext:</h4>
+            <p>Hier steht ein Satz davor</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="fixed"><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="alternatetext">
+            <p>Hier stehen Wichtige Übersetzungen</p>
+        </div>
+        <div class="fixed_long">
+            <p>Übersetze den gegeben Satz:</p>
+            <crowd-text-area name="translation" rows="2" placeholder="Übersetze hier..." required></crowd-text-area>
+        </div>
     </div>
 
-    <div>
-        <p>Check this box if you like birds</p>
-        <crowd-checkbox name="likeBirds" checked="true" required></crowd-checkbox>
+    <div class="container">
+        <div class="center">
+            <h4>Hinterer Kontext:</h4>
+            <p>Hier steht ein Satz danach</p>
+        </div>
     </div>
 
-    <div>
-        <p>On a scale of 1-10, how much do you like birds?</p>
-        <crowd-slider name="howMuch" min="1" max="10" step="1" pin="true" required></crowd-slider>
-    </div>
 
-    <div>
-        <p>Write a short essay describing your favorite bird</p>
-        <crowd-text-area name="essay" rows="4" placeholder="Lorem ipsum..." required></crowd-text-area>
-    </div>
 </crowd-form>
 
 </body>

@@ -1,366 +1,470 @@
-num,imagelink,suggestions
-0,https://i.imgur.com/hDjoq7O.png,{}
-1,https://i.imgur.com/P1vayPr.png,{}
-2,https://i.imgur.com/kyZKWkP.png,{'Charms': 'Zaubersprüche'}
-3,https://i.imgur.com/ubXbhw6.png,{}
-4,https://i.imgur.com/hBV3gJD.png,{}
-5,https://i.imgur.com/EJCq3tZ.png,{'Transfiguration': 'Verwandlung'}
-6,https://i.imgur.com/yqTy4l4.png,{}
-7,https://i.imgur.com/oXQb8Xv.png,{}
-8,https://i.imgur.com/wY5MkC8.png,{}
-9,https://i.imgur.com/PHU5kip.png,{}
-10,https://i.imgur.com/EhBEKzl.png,{}
-11,https://i.imgur.com/yjdqpCL.png,{}
-12,https://i.imgur.com/iQ7d7U7.png,{}
-13,https://i.imgur.com/kWUJN3q.png,{}
-14,https://i.imgur.com/kfkMJnG.png,{}
-15,https://i.imgur.com/H3kbaNd.png,{}
-16,https://i.imgur.com/hHIpXoO.png,{}
-17,https://i.imgur.com/C8VbaPd.png,{}
-18,https://i.imgur.com/2SBL1DA.png,{}
-19,https://i.imgur.com/eE02SYK.png,{}
-20,https://i.imgur.com/eM8aA0X.png,{}
-21,https://i.imgur.com/eeKAfkP.png,{}
-22,https://i.imgur.com/jceUwXh.png,{}
-23,https://i.imgur.com/gWK9d5w.png,{}
-24,https://i.imgur.com/Ewh3OZQ.png,{}
-25,https://i.imgur.com/yD20pmC.png,{}
-26,https://i.imgur.com/eP6djFV.png,{}
-27,https://i.imgur.com/SVHmzRB.png,{}
-28,https://i.imgur.com/Mkl0AXE.png,{}
-29,https://i.imgur.com/X8AyJmD.png,{}
-30,https://i.imgur.com/7JosaJg.png,{}
-31,https://i.imgur.com/9SjRcYV.png,{}
-32,https://i.imgur.com/5fPcRxN.png,{}
-33,https://i.imgur.com/yMCwMU1.png,{}
-34,https://i.imgur.com/EhIvRSw.png,{}
-35,https://i.imgur.com/oDzy0zy.png,{}
-36,https://i.imgur.com/fIemSsm.png,{}
-37,https://i.imgur.com/V3KYkri.png,{}
-38,https://i.imgur.com/XshgG2d.png,{}
-39,https://i.imgur.com/LvT47vk.png,{'Transfiguration': 'Verwandlung'}
-40,https://i.imgur.com/EVt4Yju.png,{}
-41,https://i.imgur.com/V8emTcu.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}"
-42,https://i.imgur.com/GIN3EXX.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-43,https://i.imgur.com/MouizQP.png,{'Patronus': 'Patronus'}
-44,https://i.imgur.com/r1WeL57.png,{}
-45,https://i.imgur.com/SHsoaTP.png,{'Patronus': 'Patronus'}
-46,https://i.imgur.com/2k0xAnY.png,{}
-47,https://i.imgur.com/FIx0LUe.png,{'Dementor': 'Dementor'}
-48,https://i.imgur.com/vv9ARIX.png,{}
-49,https://i.imgur.com/mLYtXcP.png,{'Dementor': 'Dementor'}
-50,https://i.imgur.com/DLovGv5.png,{}
-51,https://i.imgur.com/Xw6TTM9.png,{}
-52,https://i.imgur.com/mAlw3IP.png,{}
-53,https://i.imgur.com/GvXKQor.png,{}
-54,https://i.imgur.com/eMfcmBP.png,{}
-55,https://i.imgur.com/8FYlJUJ.png,{}
-56,https://i.imgur.com/rt5Cge4.png,{}
-57,https://i.imgur.com/Z2EkAet.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-58,https://i.imgur.com/AIJyn9L.png,{}
-59,https://i.imgur.com/xk1wGKM.png,{}
-60,https://i.imgur.com/pVoFFlo.png,{}
-61,https://i.imgur.com/6FzSnN9.png,{}
-62,https://i.imgur.com/UaAlk5v.png,{'Hogwarts': 'Hogwarts'}
-63,https://i.imgur.com/dWemvdI.png,{}
-64,https://i.imgur.com/RMXVdoe.png,{}
-65,https://i.imgur.com/W5mhb4B.png,{'Dementor': 'Dementor'}
-66,https://i.imgur.com/SSzVcsq.png,{}
-67,https://i.imgur.com/squknfz.png,{}
-68,https://i.imgur.com/VRHNBUc.png,{}
-69,https://i.imgur.com/hsyW99b.png,{}
-70,https://i.imgur.com/uMha1Sz.png,{}
-71,https://i.imgur.com/8Ip9bWv.png,{}
-72,https://i.imgur.com/bQrohAo.png,{}
-73,https://i.imgur.com/6IzHvID.png,{'Hufflepuff': 'Hufflepuff'}
-74,https://i.imgur.com/3Y2XXSV.png,{}
-75,https://i.imgur.com/j658PmP.png,{}
-76,https://i.imgur.com/ZRDS7dW.png,{}
-77,https://i.imgur.com/rwVzxTM.png,{}
-78,https://i.imgur.com/wBGGWrt.png,{}
-79,https://i.imgur.com/UBThobJ.png,{}
-80,https://i.imgur.com/LA4MQ3T.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}"
-81,https://i.imgur.com/zir8rpq.png,{}
-82,https://i.imgur.com/hDt5uyR.png,{}
-83,https://i.imgur.com/KkxMDtH.png,{}
-84,https://i.imgur.com/GkLsrp7.png,{}
-85,https://i.imgur.com/kbGuFY7.png,{}
-86,https://i.imgur.com/lTW1JsM.png,{}
-87,https://i.imgur.com/SZ1G453.png,{}
-88,https://i.imgur.com/XPAM6io.png,{}
-89,https://i.imgur.com/vz0OHxr.png,{}
-90,https://i.imgur.com/KWlDMm3.png,{}
-91,https://i.imgur.com/jCKc75p.png,{}
-92,https://i.imgur.com/HjiyMzd.png,{'Slytherin': 'Slytherin'}
-93,https://i.imgur.com/mqlNJ87.png,{}
-94,https://i.imgur.com/fdyFj0k.png,{}
-95,https://i.imgur.com/No2JiPS.png,{}
-96,https://i.imgur.com/FpPTdzX.png,{}
-97,https://i.imgur.com/CUoRupm.png,{}
-98,https://i.imgur.com/n7CdL2K.png,{}
-99,https://i.imgur.com/VoHYt62.png,{}
-100,https://i.imgur.com/OpbrF9P.png,{'Dark Lord': 'Dunkler Lord'}
-101,https://i.imgur.com/wCtJONn.png,{'Dark Lord': 'Dunkler Lord'}
-102,https://i.imgur.com/L8HYSES.png,{}
-103,https://i.imgur.com/WB6x0Ii.png,{}
-104,https://i.imgur.com/Bvu6vhV.png,{}
-105,https://i.imgur.com/lkzeVQK.png,{'Dementor': 'Dementor'}
-106,https://i.imgur.com/Pd12P4v.png,{}
-107,https://i.imgur.com/3sds8OC.png,"{'Auror': 'Auror', 'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts', 'Patronus': 'Patronus'}"
-108,https://i.imgur.com/h0y5bCq.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}"
-109,https://i.imgur.com/Jz9zwt7.png,{'Dementor': 'Dementor'}
-110,https://i.imgur.com/HJslmv2.png,{'Dementor': 'Dementor'}
-111,https://i.imgur.com/ysRhCcq.png,{'Dementor': 'Dementor'}
-112,https://i.imgur.com/2MRf4bx.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-113,https://i.imgur.com/kRqjQRF.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-114,https://i.imgur.com/7Tcdnqa.png,{}
-115,https://i.imgur.com/HoFjYbf.png,{'Dementor': 'Dementor'}
-116,https://i.imgur.com/LqVNKU0.png,{'Auror': 'Auror'}
-117,https://i.imgur.com/nyH5CZT.png,{}
-118,https://i.imgur.com/NFoi9uX.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-119,https://i.imgur.com/F6puknv.png,"{'Auror': 'Auror', 'Dementor': 'Dementor', 'Patronus': 'Patronus'}"
-120,https://i.imgur.com/104PVP4.png,{}
-121,https://i.imgur.com/FGHoYFm.png,{}
-122,https://i.imgur.com/5fa0JK3.png,{}
-123,https://i.imgur.com/AfNEYDW.png,{'Ravenclaw': 'Ravenclaw'}
-124,https://i.imgur.com/CovYBsL.png,{}
-125,https://i.imgur.com/nhMFUEW.png,{'Potions': 'Zaubertänke'}
-126,https://i.imgur.com/V0gP44h.png,{'Dementor': 'Dementor'}
-127,https://i.imgur.com/rMbMgQL.png,{}
-128,https://i.imgur.com/Kuqucbt.png,{'Dementor': 'Dementor'}
-129,https://i.imgur.com/Y8QRfH7.png,{}
-130,https://i.imgur.com/8nLPKaV.png,{}
-131,https://i.imgur.com/I57RhKN.png,{'Dementor': 'Dementor'}
-132,https://i.imgur.com/xQad7J4.png,{}
-133,https://i.imgur.com/ei5kU7q.png,{}
-134,https://i.imgur.com/AM9e7rC.png,{}
-135,https://i.imgur.com/faI6JOX.png,{}
-136,https://i.imgur.com/qjTuJ2W.png,{}
-137,https://i.imgur.com/B8RwxtF.png,{}
-138,https://i.imgur.com/zbERCqT.png,{}
-139,https://i.imgur.com/Eub5Fjn.png,{}
-140,https://i.imgur.com/8n4ChqN.png,{}
-141,https://i.imgur.com/PJ06P09.png,{}
-142,https://i.imgur.com/6JkTrVB.png,{}
-143,https://i.imgur.com/1spUDBP.png,{}
-144,https://i.imgur.com/3u6GPNS.png,{}
-145,https://i.imgur.com/O5OdIhk.png,{}
-146,https://i.imgur.com/zwhtmBj.png,{'Dark Lord': 'Dunkler Lord'}
-147,https://i.imgur.com/fh66bPC.png,{}
-148,https://i.imgur.com/KhPyKCE.png,{'Grindelwald': 'Grindelwald'}
-149,https://i.imgur.com/KtPyxX1.png,{'Grindelwald': 'Grindelwald'}
-150,https://i.imgur.com/iUoADWW.png,{}
-151,https://i.imgur.com/NPOJXXP.png,{}
-152,https://i.imgur.com/qAF5GA0.png,{}
-153,https://i.imgur.com/CKjfLLe.png,{}
-154,https://i.imgur.com/itUzEoE.png,{'Grindelwald': 'Grindelwald'}
-155,https://i.imgur.com/dJXAd4v.png,{}
-156,https://i.imgur.com/yIoC76n.png,{}
-157,https://i.imgur.com/aPLjn97.png,{}
-158,https://i.imgur.com/8B07v1p.png,{}
-159,https://i.imgur.com/ZpAf0XS.png,{}
-160,https://i.imgur.com/Ag6odq4.png,{'Dark Lord': 'Dunkler Lord'}
-161,https://i.imgur.com/rJumPn6.png,{}
-162,https://i.imgur.com/RerXUvG.png,{}
-163,https://i.imgur.com/SsdzY7n.png,{}
-164,https://i.imgur.com/CiLLIML.png,{}
-165,https://i.imgur.com/UxCqPxA.png,{}
-166,https://i.imgur.com/U21ehip.png,{}
-167,https://i.imgur.com/uXMZapM.png,{}
-168,https://i.imgur.com/fDywOg3.png,"{'The Dark Lord': 'Dunkle Lord, Der', 'Dark Lord': 'Dunkler Lord'}"
-169,https://i.imgur.com/rc7tlbV.png,{}
-170,https://i.imgur.com/dNdUbnw.png,{}
-171,https://i.imgur.com/CU9NXUn.png,{}
-172,https://i.imgur.com/mWdarbY.png,{}
-173,https://i.imgur.com/HpEqckr.png,"{'The Dark Lord': 'Dunkle Lord, Der', 'Dark Lord': 'Dunkler Lord'}"
-174,https://i.imgur.com/bUW2UdI.png,{}
-175,https://i.imgur.com/YNlyepr.png,{}
-176,https://i.imgur.com/g7E7e4w.png,{}
-177,https://i.imgur.com/aa9VnBd.png,{}
-178,https://i.imgur.com/GMhQfMB.png,{}
-179,https://i.imgur.com/m8ElOol.png,{}
-180,https://i.imgur.com/T5VXYEJ.png,{}
-181,https://i.imgur.com/El9ZNPU.png,{}
-182,https://i.imgur.com/tVogLuk.png,{}
-183,https://i.imgur.com/XH0ZbXt.png,{}
-184,https://i.imgur.com/ldrdI72.png,{}
-185,https://i.imgur.com/j7pAjgO.png,{}
-186,https://i.imgur.com/VI3SRYv.png,{}
-187,https://i.imgur.com/8FoRFi3.png,"{'Gryffindor': 'Gryffindor', 'Hufflepuff': 'Hufflepuff', 'Slytherin': 'Slytherin'}"
-188,https://i.imgur.com/wcLMrtn.png,{}
-189,https://i.imgur.com/ZiW4KND.png,{}
-190,https://i.imgur.com/cv4fh0Z.png,{}
-191,https://i.imgur.com/AAFCXNq.png,{}
-192,https://i.imgur.com/Ffkny4L.png,{}
-193,https://i.imgur.com/utpWjJJ.png,{}
-194,https://i.imgur.com/7p6th6Z.png,{}
-195,https://i.imgur.com/wx4FTla.png,{'Slytherin': 'Slytherin'}
-196,https://i.imgur.com/RORxa8K.png,{}
-197,https://i.imgur.com/kseDtG4.png,{}
-198,https://i.imgur.com/wLW41mY.png,{}
-199,https://i.imgur.com/1so38mH.png,{}
-200,https://i.imgur.com/rG0mGkn.png,{'Muggle': 'Muggel'}
-201,https://i.imgur.com/1EiITIk.png,{}
-202,https://i.imgur.com/RBlNieV.png,{}
-203,https://i.imgur.com/OS84hdp.png,{}
-204,https://i.imgur.com/ZvS8DM7.png,{}
-205,https://i.imgur.com/rLT36JH.png,{}
-206,https://i.imgur.com/oHYCLm6.png,{}
-207,https://i.imgur.com/CjZsY93.png,{}
-208,https://i.imgur.com/KZak3mp.png,{'Will': 'Will'}
-209,https://i.imgur.com/pOwBwoL.png,{}
-210,https://i.imgur.com/iYL4SNX.png,{}
-211,https://i.imgur.com/orjugzo.png,{'Ravenclaw': 'Ravenclaw'}
-212,https://i.imgur.com/61PNbMD.png,{}
-213,https://i.imgur.com/L6zh9cH.png,{}
-214,https://i.imgur.com/SUKmEQ3.png,{}
-215,https://i.imgur.com/rkgdJvW.png,{}
-216,https://i.imgur.com/glqpQKt.png,{}
-217,https://i.imgur.com/9tKfmKG.png,{}
-218,https://i.imgur.com/8FOtom5.png,{}
-219,https://i.imgur.com/9osFs61.png,{}
-220,https://i.imgur.com/YZqKuGw.png,{}
-221,https://i.imgur.com/Ufuy59k.png,{}
-222,https://i.imgur.com/b9PCRtC.png,{'Dark Lord': 'Dunkler Lord'}
-223,https://i.imgur.com/xJIClLY.png,{}
-224,https://i.imgur.com/8FfI93b.png,{}
-225,https://i.imgur.com/1j1LI8O.png,{}
-226,https://i.imgur.com/L6mpBy8.png,{}
-227,https://i.imgur.com/MQDGbpY.png,{}
-228,https://i.imgur.com/K0EkYU3.png,{}
-229,https://i.imgur.com/x5iUACc.png,{}
-230,https://i.imgur.com/kyBagFX.png,{}
-231,https://i.imgur.com/U8Ebjy4.png,{}
-232,https://i.imgur.com/BA0xi1y.png,{}
-233,https://i.imgur.com/S0XIYa2.png,{'Being': 'Zauberwesen'}
-234,https://i.imgur.com/rYEAeMN.png,{}
-235,https://i.imgur.com/mk9hsTx.png,{}
-236,https://i.imgur.com/xwDfG9C.png,{}
-237,https://i.imgur.com/B8Hb8q5.png,{'Muggle': 'Muggel'}
-238,https://i.imgur.com/p4uAhj1.png,{}
-239,https://i.imgur.com/ZI0miLy.png,{}
-240,https://i.imgur.com/xAD0sQD.png,{}
-241,https://i.imgur.com/hNSA2LM.png,{}
-242,https://i.imgur.com/2R9MQG1.png,{}
-243,https://i.imgur.com/b17mXvh.png,{}
-244,https://i.imgur.com/UmXH003.png,{}
-245,https://i.imgur.com/ja50KIn.png,{}
-246,https://i.imgur.com/n0nI7pW.png,{}
-247,https://i.imgur.com/mTDmhkh.png,{}
-248,https://i.imgur.com/OIoueve.png,{}
-249,https://i.imgur.com/Z0rgMjd.png,{}
-250,https://i.imgur.com/0brzYyV.png,{}
-251,https://i.imgur.com/BPIOENi.png,{}
-252,https://i.imgur.com/v8xs5BR.png,{}
-253,https://i.imgur.com/Ov7XckL.png,{}
-254,https://i.imgur.com/STc0d7G.png,{}
-255,https://i.imgur.com/EuVdLG6.png,{}
-256,https://i.imgur.com/wWAPyyQ.png,{}
-257,https://i.imgur.com/t7RBlOb.png,{}
-258,https://i.imgur.com/UPf0kVl.png,{}
-259,https://i.imgur.com/Qt8O4s4.png,{}
-260,https://i.imgur.com/3lDpEnh.png,{}
-261,https://i.imgur.com/C2wC2tr.png,{}
-262,https://i.imgur.com/0oje3kU.png,{}
-263,https://i.imgur.com/rWCcXGj.png,{}
-264,https://i.imgur.com/sBJZzss.png,{'Moon': 'Moon'}
-265,https://i.imgur.com/yUb4lp4.png,{}
-266,https://i.imgur.com/gtmdGDj.png,{}
-267,https://i.imgur.com/SsfKM7C.png,{}
-268,https://i.imgur.com/bUNXcWg.png,{}
-269,https://i.imgur.com/PKvvlRS.png,{}
-270,https://i.imgur.com/NvXslOs.png,{}
-271,https://i.imgur.com/1SrjKzd.png,{}
-272,https://i.imgur.com/IubpjoQ.png,{}
-273,https://i.imgur.com/YDxxEse.png,{}
-274,https://i.imgur.com/y1OJKkC.png,{}
-275,https://i.imgur.com/cqn35mG.png,{}
-276,https://i.imgur.com/Am2WVqT.png,{}
-277,https://i.imgur.com/GZiIZfV.png,{}
-278,https://i.imgur.com/ag9od3A.png,{}
-279,https://i.imgur.com/054s6KH.png,{}
-280,https://i.imgur.com/Aakcq4U.png,{}
-281,https://i.imgur.com/MPCsg74.png,{}
-282,https://i.imgur.com/gUWWo4a.png,{}
-283,https://i.imgur.com/vCjaHBJ.png,{}
-284,https://i.imgur.com/UNZHmXJ.png,{}
-285,https://i.imgur.com/kCqoYxR.png,{}
-286,https://i.imgur.com/YEgFHrR.png,{}
-287,https://i.imgur.com/P2mth1r.png,{'Ghosts': 'Geister'}
-288,https://i.imgur.com/ao73sRw.png,{}
-289,https://i.imgur.com/OEO1OuC.png,{}
-290,https://i.imgur.com/uX9VVVD.png,{}
-291,https://i.imgur.com/NF6EiKx.png,{}
-292,https://i.imgur.com/jOAmJux.png,{}
-293,https://i.imgur.com/YL8Y0vi.png,{}
-294,https://i.imgur.com/XlOfpWu.png,{}
-295,https://i.imgur.com/lsFCuk3.png,{}
-296,https://i.imgur.com/MA9PdBr.png,{}
-297,https://i.imgur.com/vg82cgE.png,{}
-298,https://i.imgur.com/880l5P5.png,{}
-299,https://i.imgur.com/xWu7ViX.png,{}
-300,https://i.imgur.com/MpY6kfM.png,{}
-301,https://i.imgur.com/Tp8JgZ4.png,{}
-302,https://i.imgur.com/IoldCmQ.png,{}
-303,https://i.imgur.com/eb7O4UK.png,{}
-304,https://i.imgur.com/GGmZnAy.png,{}
-305,https://i.imgur.com/BAmHsnV.png,{}
-306,https://i.imgur.com/HCxgUhC.png,{}
-307,https://i.imgur.com/nV7A5KY.png,{}
-308,https://i.imgur.com/sqlKxCJ.png,{}
-309,https://i.imgur.com/lF8WZLJ.png,{}
-310,https://i.imgur.com/NRmlOFO.png,{}
-311,https://i.imgur.com/7RYEo0S.png,{'Australia': 'Australien'}
-312,https://i.imgur.com/X3JqV18.png,{}
-313,https://i.imgur.com/IUXmSk3.png,{}
-314,https://i.imgur.com/2V9wS47.png,{}
-315,https://i.imgur.com/Lm5CGtC.png,{}
-316,https://i.imgur.com/4P3Hihu.png,{}
-317,https://i.imgur.com/BxUJzJn.png,{}
-318,https://i.imgur.com/kbUVXFt.png,{}
-319,https://i.imgur.com/BXKi8c9.png,{}
-320,https://i.imgur.com/fMWGwol.png,"{'Department of Mysteries': 'Mysteriumsabteilung', 'Department': 'Abteilung'}"
-321,https://i.imgur.com/Uf6Sckm.png,{}
-322,https://i.imgur.com/EryaJFh.png,{}
-323,https://i.imgur.com/TOR90Qp.png,{}
-324,https://i.imgur.com/MalcFEM.png,{}
-325,https://i.imgur.com/CTM6Dyi.png,{}
-326,https://i.imgur.com/S3CxsY4.png,{}
-327,https://i.imgur.com/jCVFxii.png,{}
-328,https://i.imgur.com/4PGtGi5.png,{}
-329,https://i.imgur.com/tST8VUa.png,{}
-330,https://i.imgur.com/wy65Iwm.png,{}
-331,https://i.imgur.com/1eqM64U.png,{}
-332,https://i.imgur.com/cwXu03j.png,{}
-333,https://i.imgur.com/2cYZ4ee.png,{}
-334,https://i.imgur.com/ZysxhY8.png,{}
-335,https://i.imgur.com/5bCoB55.png,{}
-336,https://i.imgur.com/omyBXsf.png,{}
-337,https://i.imgur.com/rvndxDK.png,{}
-338,https://i.imgur.com/xf0Ccfc.png,{}
-339,https://i.imgur.com/qUg4LOA.png,{}
-340,https://i.imgur.com/pmEDBxu.png,{}
-341,https://i.imgur.com/Pb2PN2o.png,{}
-342,https://i.imgur.com/vxkY39S.png,{}
-343,https://i.imgur.com/xYrsbUY.png,{}
-344,https://i.imgur.com/bMGhm6x.png,{}
-345,https://i.imgur.com/C0Jau0o.png,{}
-346,https://i.imgur.com/KwYLBHB.png,{}
-347,https://i.imgur.com/nyPuwHx.png,{}
-348,https://i.imgur.com/t44bzLR.png,{}
-349,https://i.imgur.com/id02FZT.png,{}
-350,https://i.imgur.com/El4Sppg.png,{}
-351,https://i.imgur.com/FmfL5cl.png,{}
-352,https://i.imgur.com/LhukUS3.png,{}
-353,https://i.imgur.com/Isz7pYW.png,{}
-354,https://i.imgur.com/fcuG9bE.png,{}
-355,https://i.imgur.com/AZAa5xz.png,{}
-356,https://i.imgur.com/Jc2NPRG.png,{}
-357,https://i.imgur.com/7ikWUC4.png,{}
-358,https://i.imgur.com/Mb8XiF6.png,{}
-359,https://i.imgur.com/cBmMyLp.png,{'Dark Lord': 'Dunkler Lord'}
-360,https://i.imgur.com/VskiBG3.png,{}
-361,https://i.imgur.com/H2E1MNc.png,{}
-362,https://i.imgur.com/qgSSEdS.png,{}
-363,https://i.imgur.com/WeI2YtH.png,{}
-364,https://i.imgur.com/gzC2LMp.png,{'Dark Lord': 'Dunkler Lord'}
+num,image_url,suggestions,hashes
+0,https://i.imgur.com/cP8UhBg.png,{},cP8UhBg
+1,https://i.imgur.com/P8tA6Lr.png,{},P8tA6Lr
+2,https://i.imgur.com/noIYhzr.png,{'Charms': 'Zaubersprüche'},noIYhzr
+3,https://i.imgur.com/Zq7r9zY.png,{},Zq7r9zY
+4,https://i.imgur.com/kJi2w8O.png,{},kJi2w8O
+5,https://i.imgur.com/wHBVHBA.png,{'Transfiguration': 'Verwandlung'},wHBVHBA
+6,https://i.imgur.com/LzOU6Lj.png,{},LzOU6Lj
+7,https://i.imgur.com/QGVKm3f.png,{},QGVKm3f
+8,https://i.imgur.com/s3nZIPI.png,{},s3nZIPI
+9,https://i.imgur.com/iDp2WCV.png,{},iDp2WCV
+10,https://i.imgur.com/ciZ2ad9.png,{},ciZ2ad9
+11,https://i.imgur.com/NiBRXFK.png,{},NiBRXFK
+12,https://i.imgur.com/XQ96vdi.png,{},XQ96vdi
+13,https://i.imgur.com/a1c6bBV.png,{},a1c6bBV
+14,https://i.imgur.com/LDTaaL2.png,{},LDTaaL2
+15,https://i.imgur.com/YSKlz13.png,{},YSKlz13
+16,https://i.imgur.com/uRT8TRM.png,{},uRT8TRM
+17,https://i.imgur.com/SB2dB5s.png,{},SB2dB5s
+18,https://i.imgur.com/pCRqBYF.png,{},pCRqBYF
+19,https://i.imgur.com/tnRFdVg.png,{},tnRFdVg
+20,https://i.imgur.com/YiXvqfn.png,{},YiXvqfn
+21,https://i.imgur.com/8vjZlhZ.png,{},8vjZlhZ
+22,https://i.imgur.com/XVVweNk.png,{},XVVweNk
+23,https://i.imgur.com/ABEMsLq.png,{},ABEMsLq
+24,https://i.imgur.com/nf5Nkyg.png,{},nf5Nkyg
+25,https://i.imgur.com/7d7oTXc.png,{},7d7oTXc
+26,https://i.imgur.com/GstZ9Pv.png,{},GstZ9Pv
+27,https://i.imgur.com/6I1ccwn.png,{},6I1ccwn
+28,https://i.imgur.com/mg6so6B.png,{},mg6so6B
+29,https://i.imgur.com/B1JcFMp.png,{},B1JcFMp
+30,https://i.imgur.com/hX418it.png,{},hX418it
+31,https://i.imgur.com/bd2mjWJ.png,{},bd2mjWJ
+32,https://i.imgur.com/TclbvRb.png,{},TclbvRb
+33,https://i.imgur.com/aXIDOd6.png,{},aXIDOd6
+34,https://i.imgur.com/7lo23Jt.png,{},7lo23Jt
+35,https://i.imgur.com/RwAeRqS.png,{},RwAeRqS
+36,https://i.imgur.com/VuDboKM.png,{},VuDboKM
+37,https://i.imgur.com/m0Afz6Z.png,{},m0Afz6Z
+38,https://i.imgur.com/aSZMc3e.png,{},aSZMc3e
+39,https://i.imgur.com/02tXRm5.png,{'Transfiguration': 'Verwandlung'},02tXRm5
+40,https://i.imgur.com/Mvehbha.png,{},Mvehbha
+41,https://i.imgur.com/GX0poEP.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}",GX0poEP
+42,https://i.imgur.com/UpliBwR.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}",UpliBwR
+43,https://i.imgur.com/tJT0pjc.png,{'Patronus': 'Patronus'},tJT0pjc
+44,https://i.imgur.com/HAqNXaN.png,{},HAqNXaN
+45,https://i.imgur.com/8oVSD7P.png,{'Patronus': 'Patronus'},8oVSD7P
+46,https://i.imgur.com/OmkgM2R.png,{},OmkgM2R
+47,https://i.imgur.com/b4NwKSF.png,{'Dementor': 'Dementor'},b4NwKSF
+48,https://i.imgur.com/HlYvJ2J.png,{},HlYvJ2J
+49,https://i.imgur.com/WsYDIg4.png,{'Dementor': 'Dementor'},WsYDIg4
+50,https://i.imgur.com/9DF28JW.png,{},9DF28JW
+51,https://i.imgur.com/ktDaAoj.png,{},ktDaAoj
+52,https://i.imgur.com/MD91zrE.png,{},MD91zrE
+53,https://i.imgur.com/imoFtEr.png,{},imoFtEr
+54,https://i.imgur.com/RPMciIA.png,{},RPMciIA
+55,https://i.imgur.com/VPca6N5.png,{},VPca6N5
+56,https://i.imgur.com/YbjxvHQ.png,{},YbjxvHQ
+57,https://i.imgur.com/sBhz1W9.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}",sBhz1W9
+58,https://i.imgur.com/QVZgBUT.png,{},QVZgBUT
+59,https://i.imgur.com/9pwBEK6.png,{},9pwBEK6
+60,https://i.imgur.com/C5FFYDi.png,{},C5FFYDi
+61,https://i.imgur.com/7XkPbP0.png,{},7XkPbP0
+62,https://i.imgur.com/BhuROMU.png,{'Hogwarts': 'Hogwarts'},BhuROMU
+63,https://i.imgur.com/C0qRRhG.png,{},C0qRRhG
+64,https://i.imgur.com/lypjQx3.png,{},lypjQx3
+65,https://i.imgur.com/drkBeiu.png,{'Dementor': 'Dementor'},drkBeiu
+66,https://i.imgur.com/cfGfOeW.png,{},cfGfOeW
+67,https://i.imgur.com/Y0XM7w1.png,{},Y0XM7w1
+68,https://i.imgur.com/XTjkKXc.png,{},XTjkKXc
+69,https://i.imgur.com/pW9hRvW.png,{},pW9hRvW
+70,https://i.imgur.com/OtGdM2o.png,{},OtGdM2o
+71,https://i.imgur.com/8vrd9wx.png,{},8vrd9wx
+72,https://i.imgur.com/DG901j8.png,{},DG901j8
+73,https://i.imgur.com/vUHgBvf.png,{'Hufflepuff': 'Hufflepuff'},vUHgBvf
+74,https://i.imgur.com/fEOweV8.png,{},fEOweV8
+75,https://i.imgur.com/CusnO40.png,{},CusnO40
+76,https://i.imgur.com/f5WSr8q.png,{},f5WSr8q
+77,https://i.imgur.com/hF2zM9I.png,{},hF2zM9I
+78,https://i.imgur.com/dDcTwdE.png,{},dDcTwdE
+79,https://i.imgur.com/mz7IvzB.png,{},mz7IvzB
+80,https://i.imgur.com/zPQtoBs.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}",zPQtoBs
+81,https://i.imgur.com/Ibx6mtn.png,{},Ibx6mtn
+82,https://i.imgur.com/I4Mozq9.png,{},I4Mozq9
+83,https://i.imgur.com/qBDTctj.png,{},qBDTctj
+84,https://i.imgur.com/L1TUaJY.png,{},L1TUaJY
+85,https://i.imgur.com/TCMI8U6.png,{},TCMI8U6
+86,https://i.imgur.com/JVYrh1l.png,{},JVYrh1l
+87,https://i.imgur.com/oOQp98z.png,{},oOQp98z
+88,https://i.imgur.com/IxieeHI.png,{},IxieeHI
+89,https://i.imgur.com/eGvIM16.png,{},eGvIM16
+90,https://i.imgur.com/dw4dps9.png,{},dw4dps9
+91,https://i.imgur.com/wmeXvaS.png,{},wmeXvaS
+92,https://i.imgur.com/mM5zirq.png,{'Slytherin': 'Slytherin'},mM5zirq
+93,https://i.imgur.com/OXxYXBL.png,{},OXxYXBL
+94,https://i.imgur.com/70Kbpsr.png,{},70Kbpsr
+95,https://i.imgur.com/aZZIwLl.png,{},aZZIwLl
+96,https://i.imgur.com/C56yPvP.png,{},C56yPvP
+97,https://i.imgur.com/TJM9lLN.png,{},TJM9lLN
+98,https://i.imgur.com/so77r1i.png,{},so77r1i
+99,https://i.imgur.com/8DqajNI.png,{},8DqajNI
+100,https://i.imgur.com/9ARDFBw.png,{'Dark Lord': 'Dunkler Lord'},9ARDFBw
+101,https://i.imgur.com/J1wby33.png,{'Dark Lord': 'Dunkler Lord'},J1wby33
+102,https://i.imgur.com/ZiAP8KG.png,{},ZiAP8KG
+103,https://i.imgur.com/KUz8siC.png,{},KUz8siC
+104,https://i.imgur.com/WMj5eiH.png,{},WMj5eiH
+105,https://i.imgur.com/8uU9Zny.png,{'Dementor': 'Dementor'},8uU9Zny
+106,https://i.imgur.com/9pOxPeS.png,{},9pOxPeS
+107,https://i.imgur.com/HGxV2rL.png,"{'Auror': 'Auror', 'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts', 'Patronus': 'Patronus'}",HGxV2rL
+108,https://i.imgur.com/6fg37kv.png,"{'Dementor': 'Dementor', 'Hogwarts': 'Hogwarts'}",6fg37kv
+109,https://i.imgur.com/5OHS3JA.png,{'Dementor': 'Dementor'},5OHS3JA
+110,https://i.imgur.com/VQhl4MU.png,{'Dementor': 'Dementor'},VQhl4MU
+111,https://i.imgur.com/ETwfrx4.png,{'Dementor': 'Dementor'},ETwfrx4
+112,https://i.imgur.com/y6QPEPq.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}",y6QPEPq
+113,https://i.imgur.com/HiYRfEr.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}",HiYRfEr
+114,https://i.imgur.com/fYXSclL.png,{},fYXSclL
+115,https://i.imgur.com/1sc3Xev.png,{'Dementor': 'Dementor'},1sc3Xev
+116,https://i.imgur.com/fmxlzoP.png,{'Auror': 'Auror'},fmxlzoP
+117,https://i.imgur.com/YQ1J3NV.png,{},YQ1J3NV
+118,https://i.imgur.com/0v0Axxj.png,"{'Dementor': 'Dementor', 'Patronus': 'Patronus'}",0v0Axxj
+119,https://i.imgur.com/fkrstJs.png,"{'Auror': 'Auror', 'Dementor': 'Dementor', 'Patronus': 'Patronus'}",fkrstJs
+120,https://i.imgur.com/jDHJkds.png,{},jDHJkds
+121,https://i.imgur.com/jcrwZp4.png,{},jcrwZp4
+122,https://i.imgur.com/uDhv3O9.png,{},uDhv3O9
+123,https://i.imgur.com/4RuWLBU.png,{'Ravenclaw': 'Ravenclaw'},4RuWLBU
+124,https://i.imgur.com/InVZ4Bp.png,{},InVZ4Bp
+125,https://i.imgur.com/xcaqXCj.png,{'Potions': 'Zaubertänke'},xcaqXCj
+126,https://i.imgur.com/4TgeJCG.png,{'Dementor': 'Dementor'},4TgeJCG
+127,https://i.imgur.com/vxSC8KT.png,{},vxSC8KT
+128,https://i.imgur.com/BnMR49Y.png,{'Dementor': 'Dementor'},BnMR49Y
+129,https://i.imgur.com/hpylINW.png,{},hpylINW
+130,https://i.imgur.com/KOQbcG0.png,{},KOQbcG0
+131,https://i.imgur.com/Y9cvJNK.png,{'Dementor': 'Dementor'},Y9cvJNK
+132,https://i.imgur.com/h64SbyH.png,{},h64SbyH
+133,https://i.imgur.com/08JzCSK.png,{},08JzCSK
+134,https://i.imgur.com/dI3Yho1.png,{},dI3Yho1
+135,https://i.imgur.com/rIZDCyf.png,{},rIZDCyf
+136,https://i.imgur.com/gU4qj3p.png,{},gU4qj3p
+137,https://i.imgur.com/XSgtLPw.png,{},XSgtLPw
+138,https://i.imgur.com/HcZ6jCT.png,{},HcZ6jCT
+139,https://i.imgur.com/A9IoSpd.png,{},A9IoSpd
+140,https://i.imgur.com/GnhdLbm.png,{},GnhdLbm
+141,https://i.imgur.com/WGAEupW.png,{},WGAEupW
+142,https://i.imgur.com/xS6j9cR.png,{},xS6j9cR
+143,https://i.imgur.com/aNPwfuG.png,{},aNPwfuG
+144,https://i.imgur.com/tOKT5Hj.png,{},tOKT5Hj
+145,https://i.imgur.com/hC7bRWx.png,{},hC7bRWx
+146,https://i.imgur.com/xIXmxDq.png,{'Dark Lord': 'Dunkler Lord'},xIXmxDq
+147,https://i.imgur.com/7nKPJuQ.png,{},7nKPJuQ
+148,https://i.imgur.com/PpzWkgz.png,{'Grindelwald': 'Grindelwald'},PpzWkgz
+149,https://i.imgur.com/LVnDZ8o.png,{'Grindelwald': 'Grindelwald'},LVnDZ8o
+150,https://i.imgur.com/B5lX2P7.png,{},B5lX2P7
+151,https://i.imgur.com/eVfurRG.png,{},eVfurRG
+152,https://i.imgur.com/Ms04yti.png,{},Ms04yti
+153,https://i.imgur.com/dBOjTXi.png,{},dBOjTXi
+154,https://i.imgur.com/qbaI4hC.png,{'Grindelwald': 'Grindelwald'},qbaI4hC
+155,https://i.imgur.com/mfjxSUS.png,{},mfjxSUS
+156,https://i.imgur.com/vkV5CvH.png,{},vkV5CvH
+157,https://i.imgur.com/oCrUciY.png,{},oCrUciY
+158,https://i.imgur.com/ZwKKVTE.png,{},ZwKKVTE
+159,https://i.imgur.com/OrZgKQS.png,{},OrZgKQS
+160,https://i.imgur.com/Tw0RIyA.png,{'Dark Lord': 'Dunkler Lord'},Tw0RIyA
+161,https://i.imgur.com/DS3DqwS.png,{},DS3DqwS
+162,https://i.imgur.com/74P1HD9.png,{},74P1HD9
+163,https://i.imgur.com/ftRYA95.png,{},ftRYA95
+164,https://i.imgur.com/C6GtlUJ.png,{},C6GtlUJ
+165,https://i.imgur.com/ga2awNj.png,{},ga2awNj
+166,https://i.imgur.com/nwJJubZ.png,{},nwJJubZ
+167,https://i.imgur.com/ekKCRhV.png,{},ekKCRhV
+168,https://i.imgur.com/dJN7wuQ.png,"{'The Dark Lord': 'Dunkle Lord, Der', 'Dark Lord': 'Dunkler Lord'}",dJN7wuQ
+169,https://i.imgur.com/IWTua7k.png,{},IWTua7k
+170,https://i.imgur.com/cm7nHiJ.png,{},cm7nHiJ
+171,https://i.imgur.com/NiA39xh.png,{},NiA39xh
+172,https://i.imgur.com/2BLYuty.png,{},2BLYuty
+173,https://i.imgur.com/7b243Of.png,"{'The Dark Lord': 'Dunkle Lord, Der', 'Dark Lord': 'Dunkler Lord'}",7b243Of
+174,https://i.imgur.com/8xEFIb4.png,{},8xEFIb4
+175,https://i.imgur.com/Dqzmqr8.png,{},Dqzmqr8
+176,https://i.imgur.com/81NGXCK.png,{},81NGXCK
+177,https://i.imgur.com/LgdfJQ0.png,{},LgdfJQ0
+178,https://i.imgur.com/9xbF1QQ.png,{},9xbF1QQ
+179,https://i.imgur.com/2l3MqHb.png,{},2l3MqHb
+180,https://i.imgur.com/nmiVEFR.png,{},nmiVEFR
+181,https://i.imgur.com/7kMEdmn.png,{},7kMEdmn
+182,https://i.imgur.com/AOZ6Fhq.png,{},AOZ6Fhq
+183,https://i.imgur.com/dchzHJ5.png,{},dchzHJ5
+184,https://i.imgur.com/LOKx8gW.png,{},LOKx8gW
+185,https://i.imgur.com/kR9UbwV.png,{},kR9UbwV
+186,https://i.imgur.com/uUlNxXZ.png,{},uUlNxXZ
+187,https://i.imgur.com/KYeYaR6.png,"{'Gryffindor': 'Gryffindor', 'Hufflepuff': 'Hufflepuff', 'Slytherin': 'Slytherin'}",KYeYaR6
+188,https://i.imgur.com/NpN166i.png,{},NpN166i
+189,https://i.imgur.com/RqyMJo7.png,{},RqyMJo7
+190,https://i.imgur.com/DSsm1Me.png,{},DSsm1Me
+191,https://i.imgur.com/MNfegMe.png,{},MNfegMe
+192,https://i.imgur.com/v742Aii.png,{},v742Aii
+193,https://i.imgur.com/QOF499s.png,{},QOF499s
+194,https://i.imgur.com/w913JNM.png,{},w913JNM
+195,https://i.imgur.com/StNigA5.png,{'Slytherin': 'Slytherin'},StNigA5
+196,https://i.imgur.com/eMaiWVj.png,{},eMaiWVj
+197,https://i.imgur.com/wx2zKvm.png,{},wx2zKvm
+198,https://i.imgur.com/sM15OSi.png,{},sM15OSi
+199,https://i.imgur.com/wJIDlnk.png,{},wJIDlnk
+200,https://i.imgur.com/WOON61t.png,{'Muggle': 'Muggel'},WOON61t
+201,https://i.imgur.com/BQ3bOlT.png,{},BQ3bOlT
+202,https://i.imgur.com/UnQRXx8.png,{},UnQRXx8
+203,https://i.imgur.com/yCbilBT.png,{},yCbilBT
+204,https://i.imgur.com/rHEBKaA.png,{},rHEBKaA
+205,https://i.imgur.com/8JY7dG9.png,{},8JY7dG9
+206,https://i.imgur.com/r8Owjxb.png,{},r8Owjxb
+207,https://i.imgur.com/t4HO1ha.png,{},t4HO1ha
+208,https://i.imgur.com/8kKUgKl.png,{'Will': 'Will'},8kKUgKl
+209,https://i.imgur.com/59yeo6e.png,{},59yeo6e
+210,https://i.imgur.com/Qnv74Ch.png,{},Qnv74Ch
+211,https://i.imgur.com/JSNscTx.png,{'Ravenclaw': 'Ravenclaw'},JSNscTx
+212,https://i.imgur.com/ibd6PTt.png,{},ibd6PTt
+213,https://i.imgur.com/gU0CrYJ.png,{},gU0CrYJ
+214,https://i.imgur.com/VUpDxyk.png,{},VUpDxyk
+215,https://i.imgur.com/6TjJ69p.png,{},6TjJ69p
+216,https://i.imgur.com/JCr9F36.png,{},JCr9F36
+217,https://i.imgur.com/HCGK7yB.png,{},HCGK7yB
+218,https://i.imgur.com/gZg40Wp.png,{},gZg40Wp
+219,https://i.imgur.com/DybrznP.png,{},DybrznP
+220,https://i.imgur.com/TRUS6w4.png,{},TRUS6w4
+221,https://i.imgur.com/raE690e.png,{},raE690e
+222,https://i.imgur.com/v2SqDgA.png,{'Dark Lord': 'Dunkler Lord'},v2SqDgA
+223,https://i.imgur.com/XxkUtx0.png,{},XxkUtx0
+224,https://i.imgur.com/o00BJJJ.png,{},o00BJJJ
+225,https://i.imgur.com/ttQfyW6.png,{},ttQfyW6
+226,https://i.imgur.com/aXIlfIf.png,{},aXIlfIf
+227,https://i.imgur.com/0cGHWxr.png,{},0cGHWxr
+228,https://i.imgur.com/Sn98wZM.png,{},Sn98wZM
+229,https://i.imgur.com/ckjvYng.png,{},ckjvYng
+230,https://i.imgur.com/11sudMT.png,{},11sudMT
+231,https://i.imgur.com/5INUnBb.png,{},5INUnBb
+232,https://i.imgur.com/il6dG31.png,{},il6dG31
+233,https://i.imgur.com/Eb1ABWB.png,{'Being': 'Zauberwesen'},Eb1ABWB
+234,https://i.imgur.com/zXNMCu0.png,{},zXNMCu0
+235,https://i.imgur.com/Gu63crH.png,{},Gu63crH
+236,https://i.imgur.com/VdREjxF.png,{},VdREjxF
+237,https://i.imgur.com/bf5P37D.png,{'Muggle': 'Muggel'},bf5P37D
+238,https://i.imgur.com/EOmLWii.png,{},EOmLWii
+239,https://i.imgur.com/DoF7Ov1.png,{},DoF7Ov1
+240,https://i.imgur.com/QZgZbC6.png,{},QZgZbC6
+241,https://i.imgur.com/wGt1LkW.png,{},wGt1LkW
+242,https://i.imgur.com/2uBOC7z.png,{},2uBOC7z
+243,https://i.imgur.com/3qMrxan.png,{},3qMrxan
+244,https://i.imgur.com/dMjuoYO.png,{},dMjuoYO
+245,https://i.imgur.com/SoOyKve.png,{},SoOyKve
+246,https://i.imgur.com/2Lo8Q8q.png,{},2Lo8Q8q
+247,https://i.imgur.com/fql1sed.png,{},fql1sed
+248,https://i.imgur.com/eqqyzv4.png,{},eqqyzv4
+249,https://i.imgur.com/iYSR9Ka.png,{},iYSR9Ka
+250,https://i.imgur.com/lA1CxzC.png,{},lA1CxzC
+251,https://i.imgur.com/h66fJiq.png,{},h66fJiq
+252,https://i.imgur.com/SGGDVc8.png,{},SGGDVc8
+253,https://i.imgur.com/FZBbDMV.png,{},FZBbDMV
+254,https://i.imgur.com/ijhtllr.png,{},ijhtllr
+255,https://i.imgur.com/HwTWx0r.png,{},HwTWx0r
+256,https://i.imgur.com/12S3C5K.png,{},12S3C5K
+257,https://i.imgur.com/kgNI8gJ.png,{},kgNI8gJ
+258,https://i.imgur.com/sm7jMPz.png,{},sm7jMPz
+259,https://i.imgur.com/Do9zPE2.png,{},Do9zPE2
+260,https://i.imgur.com/mfMj5OH.png,{},mfMj5OH
+261,https://i.imgur.com/T4H9NCV.png,{},T4H9NCV
+262,https://i.imgur.com/DjRuLXp.png,{},DjRuLXp
+263,https://i.imgur.com/NLBQv7K.png,{},NLBQv7K
+264,https://i.imgur.com/RR81lxd.png,{'Moon': 'Moon'},RR81lxd
+265,https://i.imgur.com/Zs5Rry6.png,{},Zs5Rry6
+266,https://i.imgur.com/SdoLprG.png,{},SdoLprG
+267,https://i.imgur.com/Jv2Kdac.png,{},Jv2Kdac
+268,https://i.imgur.com/oJJTX0b.png,{},oJJTX0b
+269,https://i.imgur.com/40BkDjJ.png,{},40BkDjJ
+270,https://i.imgur.com/ofrWhaq.png,{},ofrWhaq
+271,https://i.imgur.com/ND2l1Pe.png,{},ND2l1Pe
+272,https://i.imgur.com/3IogyBw.png,{},3IogyBw
+273,https://i.imgur.com/E3O4ZqY.png,{},E3O4ZqY
+274,https://i.imgur.com/DvGKLmj.png,{},DvGKLmj
+275,https://i.imgur.com/Q5pR7r6.png,{},Q5pR7r6
+276,https://i.imgur.com/oUaR1W0.png,{},oUaR1W0
+277,https://i.imgur.com/lkly3Pp.png,{},lkly3Pp
+278,https://i.imgur.com/i7TneNY.png,{},i7TneNY
+279,https://i.imgur.com/YbMv107.png,{},YbMv107
+280,https://i.imgur.com/8cpUWLt.png,{},8cpUWLt
+281,https://i.imgur.com/mQ8T4Zq.png,{},mQ8T4Zq
+282,https://i.imgur.com/NXTdYjx.png,{},NXTdYjx
+283,https://i.imgur.com/P4bYPk3.png,{},P4bYPk3
+284,https://i.imgur.com/O9BIL0A.png,{},O9BIL0A
+285,https://i.imgur.com/HPBPcPE.png,{},HPBPcPE
+286,https://i.imgur.com/bqu4zGI.png,{},bqu4zGI
+287,https://i.imgur.com/B3zK6iO.png,{'Ghosts': 'Geister'},B3zK6iO
+288,https://i.imgur.com/COpgnQ9.png,{},COpgnQ9
+289,https://i.imgur.com/HeFzfNE.png,{},HeFzfNE
+290,https://i.imgur.com/L9QeXRt.png,{},L9QeXRt
+291,https://i.imgur.com/9v3nuAp.png,{},9v3nuAp
+292,https://i.imgur.com/gVc9POm.png,{},gVc9POm
+293,https://i.imgur.com/uZZc008.png,{},uZZc008
+294,https://i.imgur.com/b5aLEqh.png,{},b5aLEqh
+295,https://i.imgur.com/4uuwDGQ.png,{},4uuwDGQ
+296,https://i.imgur.com/oROGR4g.png,{},oROGR4g
+297,https://i.imgur.com/sqxkdns.png,{},sqxkdns
+298,https://i.imgur.com/4XDoyhA.png,{},4XDoyhA
+299,https://i.imgur.com/5khX6E3.png,{},5khX6E3
+300,https://i.imgur.com/qdFgm50.png,{},qdFgm50
+301,https://i.imgur.com/GFKTkzS.png,{},GFKTkzS
+302,https://i.imgur.com/vKibSnV.png,{},vKibSnV
+303,https://i.imgur.com/9GJdsh8.png,{},9GJdsh8
+304,https://i.imgur.com/YhDYDbm.png,{},YhDYDbm
+305,https://i.imgur.com/9ZfIlGG.png,{},9ZfIlGG
+306,https://i.imgur.com/KZLszZd.png,{},KZLszZd
+307,https://i.imgur.com/HG1vSnM.png,{},HG1vSnM
+308,https://i.imgur.com/9C6KsOO.png,{},9C6KsOO
+309,https://i.imgur.com/EpN2cP7.png,{},EpN2cP7
+310,https://i.imgur.com/hf7PxBh.png,{},hf7PxBh
+311,https://i.imgur.com/rKvy6Vz.png,{'Australia': 'Australien'},rKvy6Vz
+312,https://i.imgur.com/931Bw6P.png,{},931Bw6P
+313,https://i.imgur.com/G6PemMO.png,{},G6PemMO
+314,https://i.imgur.com/tK4n8Hm.png,{},tK4n8Hm
+315,https://i.imgur.com/acfVDsT.png,{},acfVDsT
+316,https://i.imgur.com/dz9ksNP.png,{},dz9ksNP
+317,https://i.imgur.com/EX9S6Re.png,{},EX9S6Re
+318,https://i.imgur.com/39DyJdY.png,{},39DyJdY
+319,https://i.imgur.com/qITS41M.png,{},qITS41M
+320,https://i.imgur.com/UqcT06o.png,"{'Department of Mysteries': 'Mysteriumsabteilung', 'Department': 'Abteilung'}",UqcT06o
+321,https://i.imgur.com/1ptDc1o.png,{},1ptDc1o
+322,https://i.imgur.com/NdftwzU.png,{},NdftwzU
+323,https://i.imgur.com/ibPxVhI.png,{},ibPxVhI
+324,https://i.imgur.com/LqgdD08.png,{},LqgdD08
+325,https://i.imgur.com/Pl9mLCG.png,{},Pl9mLCG
+326,https://i.imgur.com/8pZdNN0.png,{},8pZdNN0
+327,https://i.imgur.com/mXr0a2k.png,{},mXr0a2k
+328,https://i.imgur.com/ge5Jdud.png,{},ge5Jdud
+329,https://i.imgur.com/yzjFhkw.png,{},yzjFhkw
+330,https://i.imgur.com/9lPIUV5.png,{},9lPIUV5
+331,https://i.imgur.com/kVpAn7Y.png,{},kVpAn7Y
+332,https://i.imgur.com/voJGzHv.png,{},voJGzHv
+333,https://i.imgur.com/VMknh6p.png,{},VMknh6p
+334,https://i.imgur.com/STeF7cp.png,{},STeF7cp
+335,https://i.imgur.com/BU750lM.png,{},BU750lM
+336,https://i.imgur.com/Odk0qGY.png,{},Odk0qGY
+337,https://i.imgur.com/6JoPToD.png,{},6JoPToD
+338,https://i.imgur.com/VfyB4zR.png,{},VfyB4zR
+339,https://i.imgur.com/99fRs53.png,{},99fRs53
+340,https://i.imgur.com/fhBrobZ.png,{},fhBrobZ
+341,https://i.imgur.com/cw5TQbA.png,{},cw5TQbA
+342,https://i.imgur.com/tbp7HfJ.png,{},tbp7HfJ
+343,https://i.imgur.com/zZ14szr.png,{},zZ14szr
+344,https://i.imgur.com/fkVsX8O.png,{},fkVsX8O
+345,https://i.imgur.com/LHUkqdL.png,{},LHUkqdL
+346,https://i.imgur.com/SREouxC.png,{},SREouxC
+347,https://i.imgur.com/ubSt3xk.png,{},ubSt3xk
+348,https://i.imgur.com/qTc1Uay.png,{},qTc1Uay
+349,https://i.imgur.com/TdodYy9.png,{},TdodYy9
+350,https://i.imgur.com/Cf6MdFz.png,{},Cf6MdFz
+351,https://i.imgur.com/GhCqAOj.png,{},GhCqAOj
+352,https://i.imgur.com/9x0NDvI.png,{},9x0NDvI
+353,https://i.imgur.com/GuYvwwQ.png,{},GuYvwwQ
+354,https://i.imgur.com/GzVdDQo.png,{},GzVdDQo
+355,https://i.imgur.com/LQHbZAO.png,{},LQHbZAO
+356,https://i.imgur.com/vKXSmnM.png,{},vKXSmnM
+357,https://i.imgur.com/EKPnF2j.png,{},EKPnF2j
+358,https://i.imgur.com/4tUEQ06.png,{},4tUEQ06
+359,https://i.imgur.com/Qc01dkF.png,{'Dark Lord': 'Dunkler Lord'},Qc01dkF
+360,https://i.imgur.com/pVzI08V.png,{},pVzI08V
+361,https://i.imgur.com/JeXfqjT.png,{},JeXfqjT
+362,https://i.imgur.com/MKbNHbo.png,{},MKbNHbo
+363,https://i.imgur.com/qHq8LjO.png,{},qHq8LjO
+364,https://i.imgur.com/vdDj0iD.png,{'Dark Lord': 'Dunkler Lord'},vdDj0iD
+365,https://i.imgur.com/ASeYMl6.png,{'Quibbler': 'Klitterer'},ASeYMl6
+366,https://i.imgur.com/9DUk6v2.png,{},9DUk6v2
+367,https://i.imgur.com/1PtGp6i.png,{},1PtGp6i
+368,https://i.imgur.com/p4GSJWM.png,{},p4GSJWM
+369,https://i.imgur.com/fjWuhXb.png,{'Dark Lord': 'Dunkler Lord'},fjWuhXb
+370,https://i.imgur.com/RcGshSE.png,{'Dark Lord': 'Dunkler Lord'},RcGshSE
+371,https://i.imgur.com/Vm9ZvrN.png,{},Vm9ZvrN
+372,https://i.imgur.com/I7uh240.png,{},I7uh240
+373,https://i.imgur.com/5EYxcAH.png,{},5EYxcAH
+374,https://i.imgur.com/S6VIB9b.png,{},S6VIB9b
+375,https://i.imgur.com/B1P9ZPY.png,{},B1P9ZPY
+376,https://i.imgur.com/8JMf6iA.png,{},8JMf6iA
+377,https://i.imgur.com/v3RtoSO.png,{},v3RtoSO
+378,https://i.imgur.com/MPcxYxp.png,{},MPcxYxp
+379,https://i.imgur.com/zoHVsaT.png,{},zoHVsaT
+380,https://i.imgur.com/LCF2QcS.png,{},LCF2QcS
+381,https://i.imgur.com/eRbFK9Y.png,{},eRbFK9Y
+382,https://i.imgur.com/x8PpLvi.png,{},x8PpLvi
+383,https://i.imgur.com/k6ypiZc.png,{},k6ypiZc
+384,https://i.imgur.com/4XT00zE.png,{},4XT00zE
+385,https://i.imgur.com/Bqs9zNY.png,{},Bqs9zNY
+386,https://i.imgur.com/G9ZjLg0.png,{},G9ZjLg0
+387,https://i.imgur.com/7QFEKy9.png,{},7QFEKy9
+388,https://i.imgur.com/MCHA5W7.png,{},MCHA5W7
+389,https://i.imgur.com/zC4XZHL.png,{},zC4XZHL
+390,https://i.imgur.com/lEl9lze.png,{},lEl9lze
+391,https://i.imgur.com/bMTM7AZ.png,{},bMTM7AZ
+392,https://i.imgur.com/M7YESFJ.png,{},M7YESFJ
+393,https://i.imgur.com/kZTKaro.png,{},kZTKaro
+394,https://i.imgur.com/k6QWrOg.png,{},k6QWrOg
+395,https://i.imgur.com/PkldwmS.png,{},PkldwmS
+396,https://i.imgur.com/rXDnjrT.png,{},rXDnjrT
+397,https://i.imgur.com/LUKt0SV.png,{},LUKt0SV
+398,https://i.imgur.com/c64nFv5.png,{'x': 'x'},c64nFv5
+399,https://i.imgur.com/M4WFJeP.png,{},M4WFJeP
+400,https://i.imgur.com/4tZG0dB.png,{},4tZG0dB
+401,https://i.imgur.com/nB3iKcu.png,{},nB3iKcu
+402,https://i.imgur.com/MuRV5Sv.png,{},MuRV5Sv
+403,https://i.imgur.com/7DYOdU7.png,{'Wizard': 'Zauberer'},7DYOdU7
+404,https://i.imgur.com/bHAGsXE.png,{},bHAGsXE
+405,https://i.imgur.com/Q2Cf6Dx.png,{},Q2Cf6Dx
+406,https://i.imgur.com/qWDlJ79.png,{},qWDlJ79
+407,https://i.imgur.com/zmGewAn.png,{},zmGewAn
+408,https://i.imgur.com/BVuIbsg.png,{},BVuIbsg
+409,https://i.imgur.com/nk3PduK.png,{},nk3PduK
+410,https://i.imgur.com/nQXb2Mv.png,{},nQXb2Mv
+411,https://i.imgur.com/bsEpti3.png,{},bsEpti3
+412,https://i.imgur.com/1Rvj0kM.png,{},1Rvj0kM
+413,https://i.imgur.com/P0kbJa4.png,{},P0kbJa4
+414,https://i.imgur.com/qJDRb2l.png,{},qJDRb2l
+415,https://i.imgur.com/fINHTRw.png,{},fINHTRw
+416,https://i.imgur.com/Ml01JzR.png,{},Ml01JzR
+417,https://i.imgur.com/ioQUr9K.png,{},ioQUr9K
+418,https://i.imgur.com/HwlexoI.png,{},HwlexoI
+419,https://i.imgur.com/lwtzrYI.png,{'Wizard': 'Zauberer'},lwtzrYI
+420,https://i.imgur.com/5SjHx77.png,{},5SjHx77
+421,https://i.imgur.com/CmXV8nS.png,{},CmXV8nS
+422,https://i.imgur.com/dIAvkOZ.png,{},dIAvkOZ
+423,https://i.imgur.com/xNet5sI.png,{},xNet5sI
+424,https://i.imgur.com/4i0LeQu.png,{},4i0LeQu
+425,https://i.imgur.com/EmfufTK.png,{},EmfufTK
+426,https://i.imgur.com/CEjWqaM.png,{},CEjWqaM
+427,https://i.imgur.com/jsuBIMz.png,{},jsuBIMz
+428,https://i.imgur.com/5qXHYlI.png,{},5qXHYlI
+429,https://i.imgur.com/MjLUrpG.png,{},MjLUrpG
+430,https://i.imgur.com/Uh0yNeJ.png,{},Uh0yNeJ
+431,https://i.imgur.com/bMveUzm.png,{},bMveUzm
+432,https://i.imgur.com/uRqRlvD.png,{},uRqRlvD
+433,https://i.imgur.com/XLEY7Ui.png,{},XLEY7Ui
+434,https://i.imgur.com/7eeAzLb.png,{},7eeAzLb
+435,https://i.imgur.com/AXXmyUR.png,{},AXXmyUR
+436,https://i.imgur.com/gN2VuAH.png,{},gN2VuAH
+437,https://i.imgur.com/AyA4t1f.png,{'St. Mungo': 'St. Mungo'},AyA4t1f
+438,https://i.imgur.com/BBG4OKY.png,{},BBG4OKY
+439,https://i.imgur.com/8GDNW89.png,{},8GDNW89
+440,https://i.imgur.com/GTS8q88.png,{},GTS8q88
+441,https://i.imgur.com/PXgRkiw.png,{},PXgRkiw
+442,https://i.imgur.com/elrJ4Fr.png,{},elrJ4Fr
+443,https://i.imgur.com/zANm4FF.png,{},zANm4FF
+444,https://i.imgur.com/dBY8uWd.png,{},dBY8uWd
+445,https://i.imgur.com/1FgoUz8.png,{},1FgoUz8
+446,https://i.imgur.com/XzO6V7R.png,{},XzO6V7R
+447,https://i.imgur.com/Sl2Co1q.png,{},Sl2Co1q
+448,https://i.imgur.com/vPD5i6y.png,{},vPD5i6y
+449,https://i.imgur.com/5IiCoXj.png,{},5IiCoXj
+450,https://i.imgur.com/f3f89fg.png,{},f3f89fg
+451,https://i.imgur.com/DJaRRqW.png,{},DJaRRqW
+452,https://i.imgur.com/swdn69v.png,{},swdn69v
+453,https://i.imgur.com/u9gIjVV.png,{},u9gIjVV
+454,https://i.imgur.com/TQtpMVE.png,{},TQtpMVE
+455,https://i.imgur.com/hnBm1A7.png,{},hnBm1A7
+456,https://i.imgur.com/phhyWni.png,{},phhyWni
+457,https://i.imgur.com/zdlc35q.png,{},zdlc35q
+458,https://i.imgur.com/eT7qg70.png,{},eT7qg70
+459,https://i.imgur.com/XFfrQtt.png,{},XFfrQtt
+460,https://i.imgur.com/eo7AmlC.png,{},eo7AmlC
+461,https://i.imgur.com/cQsiYKd.png,{},cQsiYKd
+462,https://i.imgur.com/1bOfLC6.png,{},1bOfLC6
+463,https://i.imgur.com/QeTjTpy.png,{},QeTjTpy
+464,https://i.imgur.com/2NNUlCS.png,{},2NNUlCS
+465,https://i.imgur.com/ptYWRph.png,{},ptYWRph
+466,https://i.imgur.com/4c3A6Yb.png,{},4c3A6Yb
+467,https://i.imgur.com/6kDnJMC.png,{},6kDnJMC
+468,https://i.imgur.com/m9D7b28.png,{},m9D7b28

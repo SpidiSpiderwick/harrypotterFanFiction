@@ -55,7 +55,7 @@ def read_dictionary(dictionary_path, sep=','):
 
 
 def generate_images_from_file(
-        chapter: str,
+        chapter_path: str,
         image_out_folder: str,
         dictionary_path: str,
         text_width: int = 50,
@@ -71,10 +71,14 @@ def generate_images_from_file(
 
     di = read_dictionary(dictionary_path)
 
-    for counter, line in enumerate(parse_from_file(chapter, di)):
+    lines = parse_from_file(chapter_path, di)
+
+    digits = len(str(len(lines)))
+
+    for counter, line in enumerate(lines):
         generate_image_from_text(
             line,
-            os.path.join(image_out_folder, f"{chapter}.{counter}.png"),
+            os.path.join(image_out_folder, f"{chapter_path}.{str(counter).zfill(digits)}.png"),
             text_width,
             font_size,
             font,
@@ -215,7 +219,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     generate_images_from_file(
-        chapter=args.input_file,
+        chapter_path=args.input_file,
         image_out_folder=args.output,
         dictionary_path=args.dictionary,
         text_width=args.width,

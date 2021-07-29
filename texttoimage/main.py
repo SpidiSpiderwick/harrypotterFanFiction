@@ -23,16 +23,12 @@ def find_ranges(s):
         return [(len(s), len(s))]
     if len(starts) > len(ends):
         ends.insert(len(ends), len(s) - 1)
-    try:
-        if (not starts and ends) or (starts[0] > ends[0]):
-            starts.insert(0, 0)
-    except IndexError:
-        print(IndexError)
+    if (not starts and ends) or (starts[0] > ends[0]):
+        starts.insert(0, 0)
     return list(zip(starts, [i + 1 for i in ends]))
 
 
 def parse_from_file(filename: str, di) -> List[str]:
-    di = [(eng, ger, re.compile(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])")) for (eng, ger) in di]
     with open(filename, "r") as f:
         lines = f.readlines()
 
@@ -54,7 +50,8 @@ def parse_from_file(filename: str, di) -> List[str]:
 def read_dictionary(dictionary_path, sep=','):
     with open(dictionary_path, 'r') as f:
         spamreader = csv.reader(f, delimiter=sep, quotechar='"')
-        return dict((row[0], row[1]) for row in spamreader).items()
+        di = dict((row[0], row[1]) for row in spamreader).items()
+        return [(eng, ger, re.compile(r"(?<![a-zA-Z0-9])" + re.escape(eng) + r"(?![a-zA-Z0-9])")) for (eng, ger) in di]
 
 
 def generate_images_from_file(

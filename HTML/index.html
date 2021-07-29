@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 
     <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
 
         div {
@@ -34,15 +35,35 @@
             margin-right: auto;
         }
 
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
 
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .arrow.hovered {
+            border: solid red;
+        }
     </style>
-
+    <script src="index.js"></script>
 </head>
 <body>
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
-<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<!-- You must include crowd-form so that your task submits answers to MTurk ${image_url} -->
 <crowd-form answer-format="flatten-objects">
 
     <crowd-instructions link-text="View instructions" link-type="button">
@@ -72,7 +93,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="fixed center"><img class="centerpic" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="alternatetext">
+        <div class="fixed center"><img class="centerpic" src="https://i.imgur.com/hDjoq7O.png" alt="alternatetext">
             <p class="center">Hier stehen Wichtige Übersetzungen</p>
         </div>
         <div class="fixed_long center">
@@ -84,6 +105,7 @@
     <div class="container">
         <div class="center">
             <h4>Hinterer Kontext:</h4>
+            <i class="arrow down"></i>
             <p>Hier steht ein Satz danach</p>
         </div>
     </div>

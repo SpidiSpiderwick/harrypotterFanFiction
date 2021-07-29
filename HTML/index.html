@@ -13,7 +13,7 @@
             display:flex;
         }
         .fixed {
-            width: 300px;
+            width: 100px;
         }
 
         .fixed_long {
@@ -25,9 +25,15 @@
 
         .center {
             margin: auto;
-            border: 2px solid green;
             width: 50%;
         }
+
+        .centerpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 
     </style>
 
@@ -66,10 +72,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="fixed"><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="alternatetext">
-            <p>Hier stehen Wichtige Übersetzungen</p>
+        <div class="fixed center"><img class="centerpic" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="alternatetext">
+            <p class="center">Hier stehen Wichtige Übersetzungen</p>
         </div>
-        <div class="fixed_long">
+        <div class="fixed_long center">
             <p>Übersetze den gegeben Satz:</p>
             <crowd-text-area name="translation" rows="2" placeholder="Übersetze hier..." required></crowd-text-area>
         </div>

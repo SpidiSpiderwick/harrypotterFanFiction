@@ -16,16 +16,33 @@ from typing import List
 BLUE = "#A6A6FF"
 
 
-def find_ranges(s):
-    starts = [i for i, letter in enumerate(s) if letter == '[' and s[i + 1] == '[']
-    ends = [i for i, letter in enumerate(s) if letter == ']' and s[i - 1] == ']']
-    if not starts and not ends:
-        return [(len(s), len(s))]
-    if len(starts) > len(ends):
-        ends.insert(len(ends), len(s) - 1)
-    if (not starts and ends) or (starts[0] > ends[0]):
-        starts.insert(0, 0)
-    return list(zip(starts, [i + 1 for i in ends]))
+def split_on_dictionary(text, dictionary):
+    indices = []
+    for (eng, ger, reg_str) in dictionary:
+        indices += [match.span() for match in reg_str.finditer(text)]
+    indices.sort()
+
+    return split_on_indices(text, indices)
+
+
+def split_on_indices(text, indices_p):
+
+    if not indices_p:
+        return [(text, "")]
+
+    indices = indices_p[:]
+    if indices[-1][1] != len(text):
+        indices.append((len(text), len(text)))
+
+    snippets = []
+
+    last_match_end = 0
+
+    for start, end in indices:
+        snippets.append((text[last_match_end:start], text[start:end]))
+        last_match_end = end
+
+    return snippets
 
 
 def parse_from_file(filename: str, di) -> List[str]:
@@ -79,6 +96,7 @@ def generate_images_from_file(
         generate_image_from_text(
             line,
             os.path.join(image_out_folder, f"{chapter_path}.{str(counter).zfill(digits)}.png"),
+            di,
             text_width,
             font_size,
             font,
@@ -91,6 +109,7 @@ def generate_images_from_file(
 def generate_image_from_text(
     text: str,
     image_out_path: str,
+    di,
     text_width: int = 50,
     font_size: int = 11,
     font: str = "./fonts/DejaVuSans.ttf",
@@ -125,22 +144,10 @@ def generate_image_from_text(
     x_offset: float = margin / 2
     y_offset: float = margin / 2
     for line in line_list:
-        ranges = find_ranges(line)
-        for counter, span in enumerate(ranges):
-            s2 = span[0]
-            e2 = span[1]
-            if counter == 0:
-                s1 = 0
-            else:
-                s1 = ranges[counter - 1][1]
-            e1 = s2
-            snippet1 = line[s1:e1]
-            snippet2 = line[s2:e2]
-            draw.text((x_offset, y_offset), snippet1, font=img_font, fill=col_fg)
-            draw.text((x_offset + img_font.getsize(snippet1)[0], y_offset), snippet2, font=img_font, fill=BLUE)
-            x_offset += img_font.getsize(snippet1 + snippet2)[0]
-        rest = line[ranges[-1][1]:]
-        draw.text((x_offset, y_offset), rest, font=img_font, fill=col_fg)
+        for plain, highlighted in split_on_dictionary(line, di):
+            draw.text((x_offset, y_offset), plain, font=img_font, fill=col_fg)
+            draw.text((x_offset + img_font.getsize(plain)[0], y_offset), highlighted, font=img_font, fill=BLUE)
+            x_offset += img_font.getsize(plain + highlighted)[0]
         x_offset = margin / 2
         y_offset += img_font.getsize(line)[1]
 

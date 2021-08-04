@@ -72,9 +72,15 @@
     <script src="index.js"></script>
 
     <script>
+        const my_blue = "#A6A6FF";
         let sugg_div = document.getElementById("suggestions");
-        let suggestions = JSON.parse("${suggestions}")
-        sugg_div.innerHTML += "<p>" + suggestions.toString() + "</p>";
+        let suggestions = JSON.parse("${suggestions}");
+        sugg_div.innerHTML += "<p>";
+        sugg_div.innerHTML += ""
+        for (const [eng, ger] of Object.entries(suggestions)) {
+            sugg_div.innerHTML += `<span style="color:${my_blue};">${eng}</span> &#8594; ${ger}<br>`
+        }
+        sugg_div.innerHTML += "</p>";
     </script>
 
     <script>
@@ -98,7 +104,7 @@
     <crowd-instructions link-text="View instructions" link-type="button">
         <short-summary>
             <p>Bitte übersetzen Sie den folgenden Satz aus dem Englischen ins Deutsche.<br>
-                Bitte verwenden Sie die Wörter, deren Übersetzungen bereits angegeben sind.<br>
+                Verwenden Sie dabei die Wörter, deren Übersetzungen bereits angegeben sind.<br>
                 Stellen Sie sicher, dass Sie einen deutschen Satz angeben, den Sie angesichts des spezifischen Kontextes für passend und angemessen halten.</p>
         </short-summary>
 
@@ -114,7 +120,7 @@
     </crowd-instructions>
     <div class="container">
         <div class="center containercolor">
-            <h4 class="centertext">Vorderer Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
+            <h4 class="centertext">Vorheriger Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
             </h4>
             <p class="centertext" id="prefText">Hier steht ein Satz davor</p>
         </div>
@@ -133,7 +139,7 @@
     <div class="container">
         <div class="center containercolor">
             <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
-            <h4 class="centertext">Hinterer Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
+            <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
         </div>
     </div>
 

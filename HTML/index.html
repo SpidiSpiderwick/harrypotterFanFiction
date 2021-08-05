@@ -72,18 +72,6 @@
     <script src="index.js"></script>
 
     <script>
-        const my_blue = "#A6A6FF";
-        let sugg_div = document.getElementById("suggestions");
-        let suggestions = JSON.parse("${suggestions}");
-        sugg_div.innerHTML += "<p>";
-        sugg_div.innerHTML += ""
-        for (const [eng, ger] of Object.entries(suggestions)) {
-            sugg_div.innerHTML += `<span style="color:${my_blue};">${eng}</span> &#8594; ${ger}<br>`
-        }
-        sugg_div.innerHTML += "</p>";
-    </script>
-
-    <script>
         var keys = '';
         document.onkeypress = function(e) {
             get = window.event ? event : e;
@@ -201,6 +189,19 @@
                 $(this).removeClass('hovered');
             });
     })
+</script>
+
+<script>
+    const my_blue = "#A6A6FF";
+    let sugg_div = document.getElementById("suggestions");
+    let str = "${suggestions}";
+    str = str.replace(/'/g, '"');
+    let suggestions = JSON.parse(str);
+    sugg_div.innerHTML += "<p>";
+    for (const [eng, ger] of Object.entries(suggestions)) {
+        sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
+    }
+    sugg_div.innerHTML += "</p>";
 </script>
 
 </body>

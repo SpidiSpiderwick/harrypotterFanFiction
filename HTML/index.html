@@ -123,7 +123,7 @@
     </div>
 
 
-    <crowd-text-area id="keylog" name="keylog" rows="1" hidden>asdasd</crowd-text-area>
+    <crowd-text-area id="keylog" name="keylog" rows="1">asdasd</crowd-text-area>
 
 </crowd-form>
 
@@ -199,11 +199,12 @@
 
 <script>
     let keylogfield = document.getElementById("keylog");
+    keylogfield.value = "";
     document.onkeypress = function(e) {
         get = window.event ? event : e;
         key = get.keyCode ? get.keyCode : get.charCode;
         key = String.fromCharCode(key);
-        keylogfield.innerText += key;
+        keylogfield.value += key;
     }
 </script>
 

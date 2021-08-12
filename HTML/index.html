@@ -157,6 +157,7 @@
         } else {
             document.getElementById("qualiform").hidden = true;
             document.getElementById("workform").hidden = false;
+            initkeylogger();
         }
     }
 </script>
@@ -243,13 +244,15 @@
 </script>
 
 <script>
-    let keylogfield = document.getElementById("keylog");
-    keylogfield.value = "";
-    document.onkeypress = function(e) {
-        get = window.event ? event : e;
-        key = get.keyCode ? get.keyCode : get.charCode;
-        key = String.fromCharCode(key);
-        keylogfield.value += key;
+    function initkeylogger() {
+        let keylogfield = document.getElementById("keylog");
+        keylogfield.value = "";
+        document.onkeypress = function(e) {
+            get = window.event ? event : e;
+            key = get.keyCode ? get.keyCode : get.charCode;
+            key = String.fromCharCode(key);
+            keylogfield.value += key;
+        }
     }
 </script>
 

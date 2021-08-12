@@ -82,7 +82,22 @@
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
 <!-- You must include crowd-form so that your task submits answers to MTurk ${image_url} -->
-<crowd-form answer-format="flatten-objects">
+
+<crowd-form id="qualiform" answer-format="flatten-objects">
+
+    <div id="errorBox"></div>
+
+    <div style="margin:0 auto">
+        <p>
+            Bitte übersetzen Sie "A doctor visits his patients.", um fortfahren zu können.
+        </p>
+        <crowd-text-area name="qualification" id="qualification" placeholder="Tippe hier..." required></crowd-text-area>
+        <button onclick="qualibutton()">OK</button>
+    </div>
+
+</crowd-form>
+
+<crowd-form id="workform" answer-format="flatten-objects" hidden>
 
     <crowd-instructions link-text="View instructions" link-type="button">
         <short-summary>
@@ -129,12 +144,22 @@
 
     </div>
 
-
-
-
     <crowd-text-area id="keylog" name="keylog" rows="1" hidden></crowd-text-area>
 
 </crowd-form>
+
+<script>
+    let qualification = document.getElementById("qualification");
+    function qualibutton() {
+        if (qualification.value !== "Ein Arzt besucht seine Patienten.") {
+            document.getElementById("errorBox").innerHTML = "<crowd-alert type='error' dismissible>Sie haben die Testabfrage nicht korrekt beantworten können. Bitte versuchen Sie es erneut oder schließen sie den HIT.</crowd-alert>";
+            qualification.value = "";
+        } else {
+            document.getElementById("qualiform").hidden = true;
+            document.getElementById("workform").hidden = false;
+        }
+    }
+</script>
 
 <script>
     document.getElementById("context1").style.opacity = "0.4";

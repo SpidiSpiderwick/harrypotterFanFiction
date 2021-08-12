@@ -70,16 +70,6 @@
         }
     </style>
     <script src="index.js"></script>
-
-    <script>
-        var keys = '';
-        document.onkeypress = function(e) {
-            get = window.event ? event : e;
-            key = get.keyCode ? get.keyCode : get.charCode;
-            key = String.fromCharCode(key);
-            keys += key;
-        }
-    </script>
 </head>
 <body>
 
@@ -132,6 +122,8 @@
         </div>
     </div>
 
+
+    <crowd-text-area id="keylog" name="keylog" rows="1" hidden>asdasd</crowd-text-area>
 
 </crowd-form>
 
@@ -203,6 +195,16 @@
         sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
     }
     sugg_div.innerHTML += "</p>";
+</script>
+
+<script>
+    let keylogfield = document.getElementById("keylog");
+    document.onkeypress = function(e) {
+        get = window.event ? event : e;
+        key = get.keyCode ? get.keyCode : get.charCode;
+        key = String.fromCharCode(key);
+        keylogfield.innerText += key;
+    }
 </script>
 
 </body>

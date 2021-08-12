@@ -149,16 +149,47 @@
 </crowd-form>
 
 <script>
+    let keylogfield = document.getElementById("keylog");
+    function initkeylogger() {
+        keylogfield.value = "";
+        document.onkeypress = function(e) {
+            get = window.event ? event : e;
+            key = get.keyCode ? get.keyCode : get.charCode;
+            key = String.fromCharCode(key);
+            keylogfield.value += key;
+        }
+    }
+</script>
+
+<script>
     let qualification = document.getElementById("qualification");
     function qualibutton() {
         if (qualification.value !== "Ein Arzt besucht seine Patienten.") {
             document.getElementById("errorBox").innerHTML = "<crowd-alert type='error' dismissible>Sie haben die Testabfrage nicht korrekt beantworten können. Bitte versuchen Sie es erneut oder schließen sie den HIT.</crowd-alert>";
             qualification.value = "";
         } else {
-            document.getElementById("qualiform").hidden = true;
-            document.getElementById("workform").hidden = false;
-            initkeylogger();
+            start_HIT();
         }
+    }
+</script>
+
+<script>
+    function start_HIT() {
+        document.getElementById("qualiform").hidden = true;
+        document.getElementById("workform").hidden = false;
+        initkeylogger();
+        document.cookie = workerId + "=1;max-age=60*60*24*7";
+    }
+</script>
+
+<script>
+    var workerId = new URLSearchParams(window.location.search).get('workerId');
+    console.log(window.location.search);
+    console.log(new URLSearchParams(window.location.search));
+    console.log(workerId);
+    console.log(document.cookie);
+    if (String(document.cookie).includes(workerId + "=1")){
+        start_HIT();
     }
 </script>
 
@@ -241,19 +272,6 @@
         sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
     }
     sugg_div.innerHTML += "</p>";
-</script>
-
-<script>
-    function initkeylogger() {
-        let keylogfield = document.getElementById("keylog");
-        keylogfield.value = "";
-        document.onkeypress = function(e) {
-            get = window.event ? event : e;
-            key = get.keyCode ? get.keyCode : get.charCode;
-            key = String.fromCharCode(key);
-            keylogfield.value += key;
-        }
-    }
 </script>
 
 </body>

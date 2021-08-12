@@ -125,7 +125,7 @@
         </div>
         <div class="fixed_long center">
             <p>Übersetze den gegeben Satz:</p>
-            <crowd-text-area name="translation" rows="2" placeholder="Übersetze hier..." required></crowd-text-area>
+            <crowd-text-area name="translation" id="translation" rows="2" placeholder="Übersetze hier..." required></crowd-text-area>
         </div>
     </div>
 
@@ -140,11 +140,18 @@
             <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
             <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
         </div>
+    <body onload="starttime()"></body>
+    <body onsubmit="savealerts(); timealert()"></body>
 
 
     </div>
 
     <crowd-text-area id="keylog" name="keylog" rows="1" hidden></crowd-text-area>
+    <crowd-text-area id="keylog" name="keylog" rows="1" hidden></crowd-text-area>
+    <crowd-text-area id="keylogalert" name="keylogalert" rows="1" hidden></crowd-text-area>
+    <crowd-text-area id="timealert" name="timealert" rows="1" hidden></crowd-text-area>
+
+
 
 </crowd-form>
 
@@ -272,6 +279,29 @@
         sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
     }
     sugg_div.innerHTML += "</p>";
+</script>
+
+<script>
+    let start;
+    function savealerts(){
+        let workerinput = document.getElementById("translation");
+        let keylogalert = document.getElementById("keylogalert");
+        if(workerinput.value.length > keylogfield.value.length){
+            keylogalert.value = "TRUE";
+        }
+    }
+
+    function starttime(){
+        start = Date.now();
+    }
+
+    function timealert(){
+        let timealert = document.getElementById("timealert");
+        if(Date.now() - start < 30000){
+            timealert.value = "TRUE";
+        }
+    }
+
 </script>
 
 </body>

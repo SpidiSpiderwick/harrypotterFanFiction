@@ -347,7 +347,7 @@
     let str = "${suggestions}";
     str = str.replace(/'/g, '"');
     let suggestions = JSON.parse(str);
-    if (suggestions) {
+    if (suggestions && $.isEmptyObject(suggestions)) {
         sugg_div.innerHTML += "<p>Verwenden Sie diese Übersetzungen:";
         for (const [eng, ger] of Object.entries(suggestions)) {
             sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';

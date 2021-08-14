@@ -6,13 +6,13 @@
     <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        String.prototype.levenshtein = function(string) {
+        String.prototype.levenshtein = function (string) {
             let a = this, b = string + "", m = [], i, j;
 
             if (!(a && b)) return (b || a).length;
 
-            for (i = 0; i <= b.length; m[i] = [i++]);
-            for (j = 0; j <= a.length; m[0][j] = j++);
+            for (i = 0; i <= b.length; m[i] = [i++]) ;
+            for (j = 0; j <= a.length; m[0][j] = j++) ;
 
             for (i = 1; i <= b.length; i++) {
                 for (j = 1; j <= a.length; j++) {
@@ -20,7 +20,7 @@
                         ? m[i - 1][j - 1]
                         : m[i][j] = Math.min(
                             m[i - 1][j - 1] + 1,
-                            Math.min(m[i][j - 1] + 1, m[i - 1 ][j] + 1))
+                            Math.min(m[i][j - 1] + 1, m[i - 1][j] + 1))
                 }
             }
 
@@ -32,13 +32,16 @@
         div {
             padding: 10px;
         }
+
         .container {
-            display:flex;
+            display: flex;
             column-gap: 20px;
         }
-        .containercolor{
+
+        .containercolor {
             background-color: lightsteelblue;
         }
+
         .fixed {
             width: 100px;
         }
@@ -46,6 +49,7 @@
         .fixed_long {
             width: 500px;
         }
+
         .flex-item {
             flex-grow: 0;
         }
@@ -55,7 +59,7 @@
             width: 50%;
         }
 
-        .centertext{
+        .centertext {
             text-align: center;
         }
 
@@ -74,7 +78,7 @@
             border-width: 0 3px 3px 0;
             display: inline-block;
             padding: 3px;
-            text-align:center;
+            text-align: center;
             margin: 0px auto;
         }
 
@@ -92,7 +96,7 @@
             border: solid red;
         }
 
-        .context{
+        .context {
 
         }
 
@@ -100,7 +104,7 @@
             background-color: lightsteelblue;
             padding: 10px;
             width: 300px;
-            text-align:center
+            text-align: center
         }
 
         .my_blue {
@@ -117,123 +121,149 @@
 
 <!-- You must include crowd-form so that your task submits answers to MTurk ${image_url} -->
 
-<crowd-form id="qualiform" answer-format="flatten-objects">
+<crowd-form id="workform" answer-format="flatten-objects">
 
-    <div id="errorBox"></div>
+    <span id="qualidiv">
+        <div id="errorBox"></div>
 
-    <div style="margin:0 auto">
-        <p>
-            Bitte übersetzen Sie einmalig den Satz:<br><br><span style="font-size: xx-large">my horse jack is running home</span><br><br> um fortfahren zu können.
-        </p>
-        <crowd-text-area name="qualification" id="qualification" placeholder="Tippe hier..." required></crowd-text-area>
-        <button onclick="qualibutton()">OK</button>
-    </div>
-
-</crowd-form>
-
-<crowd-form id="workform" answer-format="flatten-objects" hidden>
-
-    <crowd-instructions link-text="View instructions" link-type="button">
-        <short-summary>
-            <p>Bitte übersetzen Sie den folgenden Satz aus dem Englischen ins Deutsche.<br>
-                Verwenden Sie dabei die Wörter, deren Übersetzungen bereits angegeben sind.<br>
-                Stellen Sie sicher, dass Sie einen deutschen Satz angeben, den Sie angesichts des spezifischen Kontextes für passend und angemessen halten.</p>
-        </short-summary>
-
-        <detailed-instructions>
+        <div style="margin:0 auto">
             <p>
-                Ihnen wird ein englischer Satz vorgegeben, den Sie ins Deutsche übersetzen sollen. Inhaltlich geht es um Fanfiction-Literatur von Harry Potter. Gegebenenfalls sind einige Begriffe bereits für das Deutsch vorgegeben, diese sind zu übernehmen, z.B. the Dark Lord = der Dunkle Lord.
-                <br><br>
-                Das Ziel der Aufgabe besteht darin, einen idiomatischen Satz auf Deutsch zu formulieren, der angesichts des spezifischen Kontexts passend und angemessen ist.
-                <br><br>
-                Für eine dem Kontext angemessene Übersetzung haben Sie die Möglichkeit, den jeweils vorhergien Satz und den auf die zu übersetzende Einheit folgenden Satz einzusehen. Diese Sätze dienen lediglich der Orientierung und sind nicht zu übersetzen.
-                <br><br>
-                Die Sätze, die weitere Anhaltspunkte und Kontext bieten und nicht zu übersetzen sind, sind blau hinterlegt.
-                <br><br>
-                Das Übersetzen mithilfe von Software oder maschineller Übersetzung (etwa Google Translate oder DeepL) ist nicht erlaubt und ist zu unterlassen. Worker, die von maschinellen Übersetzungstools Gebrauch machen, werden für weitere Tasks blockiert. Ergebnisse, die nicht den Vorgaben entsprechen, werden abgelehnt.
-                <br><br><br>
-                BEISPIEL:
-                <br><br>
-                Übersetzen Sie diesen Satz:
-                <br><br>
-                <span style="font-size: xx-large">But I would never have imagined sharpening a <span class="my_blue">Hufflepuff</span>’s bones into weapons.</span>
-                <br><br>
-                Verwenden Sie diese Übersetzungen:
-                <br>
-                <span class="my_blue">Hufflepuff</span> -> Hufflepuff<br><br>
+                Bitte übersetzen Sie einmalig den Satz:<br><br><span style="font-size: xx-large">my horse jack is running home</span><br><br>
+                um fortfahren zu können.
+            </p>
+            <crowd-text-area name="qualification" id="qualification" placeholder="Tippe hier..."></crowd-text-area>
+            <button onclick="qualibutton()">OK</button>
+        </div>
+
+    </span>
+
+    <span id="workdiv" style="visibility: hidden">
+
+        <crowd-instructions link-text="View instructions" link-type="button">
+            <short-summary>
+                <p>Bitte übersetzen Sie den folgenden Satz aus dem Englischen ins Deutsche.<br>
+                    Verwenden Sie dabei die Wörter, deren Übersetzungen bereits angegeben sind.<br>
+                    Stellen Sie sicher, dass Sie einen deutschen Satz angeben, den Sie angesichts des spezifischen
+                    Kontextes für passend und angemessen halten.</p>
+            </short-summary>
+
+            <detailed-instructions>
+                <p>
+                    Ihnen wird ein englischer Satz vorgegeben, den Sie ins Deutsche übersetzen sollen. Inhaltlich geht
+                    es um Fanfiction-Literatur von Harry Potter. Gegebenenfalls sind einige Begriffe bereits für das
+                    Deutsch vorgegeben, diese sind zu übernehmen, z.B. the Dark Lord = der Dunkle Lord.
+                    <br><br>
+                    Das Ziel der Aufgabe besteht darin, einen idiomatischen Satz auf Deutsch zu formulieren, der
+                    angesichts des spezifischen Kontexts passend und angemessen ist.
+                    <br><br>
+                    Für eine dem Kontext angemessene Übersetzung haben Sie die Möglichkeit, den jeweils vorhergien Satz
+                    und den auf die zu übersetzende Einheit folgenden Satz einzusehen. Diese Sätze dienen lediglich der
+                    Orientierung und sind nicht zu übersetzen.
+                    <br><br>
+                    Die Sätze, die weitere Anhaltspunkte und Kontext bieten und nicht zu übersetzen sind, sind blau
+                    hinterlegt.
+                    <br><br>
+                    Das Übersetzen mithilfe von Software oder maschineller Übersetzung (etwa Google Translate oder
+                    DeepL) ist nicht erlaubt und ist zu unterlassen. Worker, die von maschinellen Übersetzungstools
+                    Gebrauch machen, werden für weitere Tasks blockiert. Ergebnisse, die nicht den Vorgaben entsprechen,
+                    werden abgelehnt.
+                    <br><br><br>
+                    BEISPIEL:
+                    <br><br>
+                    Übersetzen Sie diesen Satz:
+                    <br><br>
+                    <span style="font-size: xx-large">But I would never have imagined sharpening a <span
+                            class="my_blue">Hufflepuff</span>’s bones into weapons.</span>
+                    <br><br>
+                    Verwenden Sie diese Übersetzungen:
+                    <br>
+                    <span class="my_blue">Hufflepuff</span> -> Hufflepuff<br><br>
                 <table style="border-collapse:separate;border-spacing:50px 0;width:650px;table-layout:fixed">
                     <tr>
-                        <td class="examplecell" ><b>Vorheriger Kontext:</b></td>
-                        <td class="examplecell" ><b>Folgender Kontext:</b></td>
+                        <td class="examplecell"><b>Vorheriger Kontext:</b></td>
+                        <td class="examplecell"><b>Folgender Kontext:</b></td>
                     </tr>
                     <tr>
-                        <td class="examplecell" >I looked over to the skeleton, knowing exactly what I had to do.</td>
-                        <td class="examplecell" >Yet, I reached over.</td>
+                        <td class="examplecell">I looked over to the skeleton, knowing exactly what I had to do.</td>
+                        <td class="examplecell">Yet, I reached over.</td>
                     </tr>
                 </table>
                 <br><br>
-                Da Hufflepuff vorgegeben ist, muss dieser Begriff nicht übersetzt werden, Genus und Kasus soll im Deutschen natürlich angepasst und grammatikalisch korrekt wiedergegeben werden. Alle übrigen Wörter sollen sie kontextgerecht nach ihrem Empfinden übersetzen. Die Sätze unterhalb sollen nicht übersetzt werden und dienen lediglich zum besseren Verständnis des Satzes im Kontext.
+                Da Hufflepuff vorgegeben ist, muss dieser Begriff nicht übersetzt werden, Genus und Kasus soll im
+                Deutschen natürlich angepasst und grammatikalisch korrekt wiedergegeben werden. Alle übrigen Wörter
+                sollen sie kontextgerecht nach ihrem Empfinden übersetzen. Die Sätze unterhalb sollen nicht übersetzt
+                werden und dienen lediglich zum besseren Verständnis des Satzes im Kontext.
                 <br><br>
                 Eine beispielhafte Übersetzung lautet:
                 <br><br>
                 Aber ich hätte niemals daran gedacht, aus den Knochen eines Hufflepuffs eine Waffe zu schnitzen.
-            </p>
-        </detailed-instructions>
+                </p>
+            </detailed-instructions>
 
-        <positive-example>
-            <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
-            <p>Dies ist das Wohnzimmer des Hauses, welches vom angesehenen Professor Michael Verres-Evans, seiner Ehefrau Petunia Evans-Verres und ihrem Adoptivsohn Harry James Potter-Evans-Verres bewohnt wird. </p>
-        </positive-example>
+            <positive-example>
+                <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
+                    wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
+                <p>Dies ist das Wohnzimmer des Hauses, welches vom angesehenen Professor Michael Verres-Evans, seiner
+                    Ehefrau Petunia Evans-Verres und ihrem Adoptivsohn Harry James Potter-Evans-Verres bewohnt
+                    wird. </p>
+            </positive-example>
 
-        <negative-example>
-            <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
-            <p>Das ist das Wohnzimmer von dem Haus, besetzt von dem hervorragenden Professor Michael Verres-Evans und seine Frau Mrs. Petunia Evans-Verres, und ihr adoptierter Sohn, Harry James Potter-Evans-Verres.</p>
-            <p>Negativ ist die wortwörtliche Übersetzung sowie der falsche Kasus an zwei Stellen.</p>
-        </negative-example>
-    </crowd-instructions>
+            <negative-example>
+                <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
+                    wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
+                <p>Das ist das Wohnzimmer von dem Haus, besetzt von dem hervorragenden Professor Michael Verres-Evans
+                    und seine Frau Mrs. Petunia Evans-Verres, und ihr adoptierter Sohn, Harry James
+                    Potter-Evans-Verres.</p>
+                <p>Negativ ist die wortwörtliche Übersetzung sowie der falsche Kasus an zwei Stellen.</p>
+            </negative-example>
+        </crowd-instructions>
 
-    <div class="container">
-        <div class="fixed center">
-            <p>Übersetzen Sie diesen Satz:</p>
-            <img class="centerpic" src=${image_url} alt="alternatetext">
-            <div class="center" id="suggestions"></div>
+        <div class="container">
+            <div class="fixed center">
+                <p>Übersetzen Sie diesen Satz:</p>
+                <img class="centerpic" src=${image_url} alt="alternatetext">
+                <div class="center" id="suggestions"></div>
+            </div>
+            <div class="fixed_long center">
+                <crowd-text-area name="translation" id="translation" rows="2" placeholder="Übersetze hier..."
+                                 required></crowd-text-area>
+            </div>
         </div>
-        <div class="fixed_long center">
-            <crowd-text-area name="translation" id="translation" rows="2" placeholder="Übersetze hier..." required></crowd-text-area>
+
+        <div class="container">
+
+            <div class="center containercolor context" id="context1">
+                <h4 class="centertext">Vorheriger Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
+                </h4>
+                <p class="centertext" id="prefText">Hier steht ein Satz davor</p>
+            </div>
+            <div class="center containercolor context" id="context2">
+                <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
+                <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
+            </div>
+            <body onload="starttime()"></body>
+            <body onsubmit="savealerts(); timealert()"></body>
+
+
         </div>
-    </div>
 
-    <div class="container">
+        <crowd-button form-action="submit">Submit</crowd-button>
 
-        <div class="center containercolor context" id="context1">
-            <h4 class="centertext">Vorheriger Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
-            </h4>
-            <p class="centertext" id="prefText">Hier steht ein Satz davor</p>
-        </div>
-        <div class="center containercolor context" id="context2">
-            <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
-            <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
-        </div>
-    <body onload="starttime()"></body>
-    <body onsubmit="savealerts(); timealert()"></body>
+    </span>
 
-
-    </div>
-
-    <crowd-text-area id="keylog" name="keylog" rows="1" hidden></crowd-text-area>
-    <crowd-text-area id="gtransalert" name="gtransalert" hidden></crowd-text-area>
-    <crowd-text-area id="keylogalert" name="keylogalert" rows="1" hidden></crowd-text-area>
-    <crowd-text-area id="timealert" name="timealert" rows="1" hidden></crowd-text-area>
-
-
+    <crowd-text-area id="keylog" name="keylog" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="gtransalert" name="gtransalert" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
 
 </crowd-form>
 
 <script>
     let keylogfield = document.getElementById("keylog");
+
     function initkeylogger() {
         keylogfield.value = "";
-        document.onkeypress = function(e) {
+        document.onkeypress = function (e) {
             get = window.event ? event : e;
             key = get.keyCode ? get.keyCode : get.charCode;
             key = String.fromCharCode(key);
@@ -244,6 +274,7 @@
 
 <script>
     let qualification = document.getElementById("qualification");
+
     function qualibutton() {
         let answer = qualification.value.trim().toLowerCase().replace("gerade", "").replace("läuft", "rennt");
         if (answer.levenshtein("mein pferd jack rennt nach hause") > 3) {
@@ -255,8 +286,9 @@
     }
 
     function start_HIT() {
-        document.getElementById("qualiform").hidden = true;
-        document.getElementById("workform").hidden = false;
+        document.getElementById("qualidiv").style.display = "none";
+        document.getElementById("qualidiv").style.maxHeight = "0";
+        document.getElementById("workdiv").style.visibility = "visible";
         initkeylogger();
         document.cookie = workerId + "=1;max-age=60*60*24*7";
     }
@@ -266,7 +298,7 @@
     console.log(new URLSearchParams(window.location.search));
     console.log(workerId);
     console.log(document.cookie);
-    if (String(document.cookie).includes(workerId + "=1")){
+    if (String(document.cookie).includes(workerId + "=1")) {
         start_HIT();
     }
 </script>
@@ -275,10 +307,12 @@
     document.getElementById("context1").style.opacity = "0.4";
     document.getElementById("context2").style.opacity = "0.4";
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.context').hover(
-            function() { document.getElementById("context1").style.opacity = "1";
-                         document.getElementById("context2").style.opacity = "1";},
+            function () {
+                document.getElementById("context1").style.opacity = "1";
+                document.getElementById("context2").style.opacity = "1";
+            },
         );
     });
 
@@ -295,11 +329,11 @@
     var current_text = text[num];
 
     let upper_context = document.getElementById("prefText");
-    upper_context.innerHTML = get_context(num-1);
+    upper_context.innerHTML = get_context(num - 1);
     let lower_context = document.getElementById("afterText");
-    lower_context.innerHTML = get_context(num+1);
+    lower_context.innerHTML = get_context(num + 1);
 
-    function append_context(num){
+    function append_context(num) {
         let context = get_context(num);
         if (context) {
             lower_context.append(document.createElement("br"));
@@ -308,7 +342,7 @@
         }
     }
 
-    function prepend_context(num){
+    function prepend_context(num) {
         let context = get_context(num);
         if (context) {
             upper_context.prepend(document.createElement("br"));
@@ -320,22 +354,22 @@
     // first context is already added by default, next one is second therefore
     let howOftenUp = 2;
     let howOftenDown = 2;
-    $(document).ready(function(){
-        $(".arrow.up").on("click",function() {
+    $(document).ready(function () {
+        $(".arrow.up").on("click", function () {
             prepend_context(num - howOftenUp)
             howOftenUp = howOftenUp + 1;
         });
-        $(".arrow.down").on("click",function() {
-            append_context(num+howOftenDown)
+        $(".arrow.down").on("click", function () {
+            append_context(num + howOftenDown)
             howOftenDown = howOftenDown + 1;
         });
     });
 
-    $(function() {
-        $('.arrow').hover(function(){
+    $(function () {
+        $('.arrow').hover(function () {
                 $(this).addClass('hovered');
             },
-            function(){
+            function () {
                 $(this).removeClass('hovered');
             });
     })
@@ -347,7 +381,7 @@
     let str = "${suggestions}";
     str = str.replace(/'/g, '"');
     let suggestions = JSON.parse(str);
-    if (suggestions && $.isEmptyObject(suggestions)) {
+    if (suggestions && !$.isEmptyObject(suggestions)) {
         sugg_div.innerHTML += "<p>Verwenden Sie diese Übersetzungen:";
         for (const [eng, ger] of Object.entries(suggestions)) {
             sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
@@ -358,21 +392,22 @@
 
 <script>
     let start;
-    function savealerts(){
+
+    function savealerts() {
         let workerinput = document.getElementById("translation");
         let keylogalert = document.getElementById("keylogalert");
-        if(workerinput.value.length > keylogfield.value.length){
+        if (workerinput.value.length > keylogfield.value.length) {
             keylogalert.value = "TRUE";
         }
     }
 
-    function starttime(){
+    function starttime() {
         start = Date.now();
     }
 
-    function timealert(){
+    function timealert() {
         let timealert = document.getElementById("timealert");
-        if(Date.now() - start < 30000){
+        if (Date.now() - start < 30000) {
             timealert.value = "TRUE";
         }
     }
@@ -384,7 +419,7 @@
 
     let translationfield = document.getElementById("translation");
 
-    document.getElementById("workform").onsubmit = function(e ) {
+    document.getElementById("workform").onsubmit = function (e) {
         let answer = translationfield.value.replace(/[^a-zA-Z0-9\-äöüß]/, " ").replace(/ +/, " ").trim().toLowerCase();
         console.log(answer);
         console.log(gtrans.levenshtein(answer));

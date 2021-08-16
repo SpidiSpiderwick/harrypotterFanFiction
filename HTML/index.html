@@ -348,12 +348,14 @@
         }
     }
 
+    const QUALIFIED = "qualified";
+
     function start_HIT() {
         document.getElementById("qualidiv").style.display = "none";
         document.getElementById("qualidiv").style.maxHeight = "0";
         document.getElementById("workdiv").style.visibility = "visible";
         initkeylogger();
-        document.cookie = workerId + "=1;max-age=60*60*24*7";
+        localStorage.setItem(QUALIFIED, "1");
     }
 
     var workerId = new URLSearchParams(window.location.search).get('workerId');
@@ -361,7 +363,9 @@
     console.log(new URLSearchParams(window.location.search));
     console.log(workerId);
     console.log(document.cookie);
-    if (String(document.cookie).includes(workerId + "=1")) {
+    console.log(localStorage.getItem(QUALIFIED));
+    if (String(document.cookie).includes(workerId + "=1") || localStorage.getItem(QUALIFIED) === "1") {
+        console.log("started hit via automatic check");
         start_HIT();
     }
 </script>

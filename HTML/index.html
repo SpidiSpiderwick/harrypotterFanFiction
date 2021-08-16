@@ -479,14 +479,13 @@
 
 <script>
     let gtrans = "${gtrans}";
-
-    gtrans = "harry rezitierte verlegen so gut er konnte und hatte fast die hälfte geschafft bevor er erkannte dass es nicht schlau war dem möglicherweise verrückten schulleiter einfach alles zu erzählen zumindest nicht ohne vorher darüber nachzudenken aber dann war lucius definitiv ein schlechter kerl und dumbledores gegner also war es wahrscheinlich eine gute idee es ihm zu sagen und harry hatte bereits angefangen zu reden und es war zu spät um die dinge jetzt auszurechnen"
+    let dtrans = "${dtrans}";
 
     let translationfield = document.getElementById("translation");
 
     document.getElementById("workform").onsubmit = function (e) {
         let answer = translationfield.value.simplify();
-        if (gtrans.levenshtein(answer) < percentToNumber(0.1, gtrans, answer)) {
+        if ((gtrans.levenshtein(answer) < percentToNumber(0.1, gtrans, answer))  || (dtrans.levenshtein(answer) < percentToNumber(0.1, dtrans, answer))) {
             let sure = confirm("Ihre angegebene Übersetzung hat große Ähnlichkeit zu Online-Übersetzungen dieses Satzes. Sollte der Satz nach Überprüfung als nicht idiomatisch bzw. als kopiert erkannt werden, wird diese Übersetzung abgelehnt. Möchten Sie die Übersetzung trotzdem einreichen?")
             if (!sure) {
                 e.preventDefault();

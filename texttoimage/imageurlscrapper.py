@@ -1,5 +1,6 @@
 import os
 import base64
+import re
 import sys
 
 import requests
@@ -8,8 +9,21 @@ import csv
 import ntpath
 import pathlib
 
+from requests_ip_rotator import ApiGateway
+
+
+def simplify(string):
+    return re.sub(r" +", " ", re.sub(r"[^a-zA-Z0-9\-äöüß]", " ", string)).strip().lower()
+
 
 if __name__ == '__main__':
+
+    gateway = ApiGateway("https://api.imgur.com")
+    gateway.start()
+
+    session = requests.Session()
+    session.mount("https://api.imgur.com", gateway)
+
     json_path = r"C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\links.json"
     with open(json_path, "r") as jf:
         links = json.load(jf)
@@ -34,8 +48,8 @@ if __name__ == '__main__':
                 "name": ntpath.basename(file_path)
             }
 
-            r = requests.request("POST", upload_url, headers=headers, json=upload_data)
-            if r.status_code == 429:
+            r = session.request("POST", upload_url, headers=headers, json=upload_data)
+            if r.status_code == 429 or r.status_code == 417:
                 with open(json_path, "w+") as jf:
                     json.dump(links, jf)
                 sys.exit(r.status_code)
@@ -43,12 +57,22 @@ if __name__ == '__main__':
 
     sugg_path = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\REVhpsentences.txt.suggestions'
 
-    with open(sugg_path, "r") as sugg_file:
+    with open(sugg_path, "r", encoding="utf-8") as sugg_file:
         suggestions = json.load(sugg_file)
+
+    gtrans_path = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\gtranslated.txt'
+
+    with open(gtrans_path, "r", encoding="utf-8") as gtrans_file:
+        gtrans = [simplify(line) for line in gtrans_file]
+
+    dtrans_path = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\deeptranslated-utf8.txt'
+
+    with open(dtrans_path, "r", encoding="utf-8") as dtrans_file:
+        dtrans = [simplify(line) for line in dtrans_file]
 
     links_csv = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\links.csv'
 
-    with open(links_csv, "w+", newline="") as f:
+    with open(links_csv, "w+", newline="", encoding="utf-8") as f:
         spamwriter = csv.writer(f, delimiter=",", quotechar='"')
-        spamwriter.writerow(["num", "image_url", "suggestions"])
-        spamwriter.writerows([(num, link, suggestions[num]) for num, link in enumerate(links)])
+        spamwriter.writerow(["num", "image_url", "suggestions", "gtrans", "dtrans"])
+        spamwriter.writerows([(num, link, suggestions[num], gtrans[num], dtrans[num]) for num, link in enumerate(links)])

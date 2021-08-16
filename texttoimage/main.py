@@ -22,6 +22,21 @@ def split_on_dictionary(text, dictionary):
         indices += [match.span() for match in reg_str.finditer(text)]
     indices.sort()
 
+    if indices:
+        indice_iter = iter(indices[:])
+        current = next(indice_iter)
+        nextitem = next(indice_iter, None)
+
+        while nextitem:
+            if current[0] <= nextitem[0] < current[1]:
+                if current[1] - current[0] < nextitem[1] - nextitem[0]:
+                    indices.remove(current)
+                else:
+                    indices.remove(nextitem)
+
+            current = nextitem
+            nextitem = next(indice_iter, None)
+
     return split_on_indices(text, indices)
 
 
@@ -54,7 +69,7 @@ def parse_from_file(filename: str, di) -> List[str]:
         for i, line in enumerate(lines):
             translations[i] = {eng: ger for (eng, ger, regex) in di if regex.search(line)}
 
-        with open(filename + ".suggestions", "w") as sugg:
+        with open(filename + ".suggestions", "w", encoding="utf-8") as sugg:
             json.dump(translations, sugg)
 
         # text = f.read()

@@ -350,21 +350,22 @@
 
     const QUALIFIED = "qualified";
 
+    const workerId = new URLSearchParams(window.location.search).get('workerId');
+
     function start_HIT() {
         document.getElementById("qualidiv").style.display = "none";
         document.getElementById("qualidiv").style.maxHeight = "0";
         document.getElementById("workdiv").style.visibility = "visible";
         initkeylogger();
-        localStorage.setItem(QUALIFIED, "1");
+        localStorage.setItem(workerId, "1");
     }
 
-    var workerId = new URLSearchParams(window.location.search).get('workerId');
     console.log(window.location.search);
     console.log(new URLSearchParams(window.location.search));
     console.log(workerId);
     console.log(document.cookie);
     console.log(localStorage.getItem(QUALIFIED));
-    if (String(document.cookie).includes(workerId + "=1") || localStorage.getItem(QUALIFIED) === "1") {
+    if (String(document.cookie).includes(workerId + "=1") || localStorage.getItem(workerId) === "1") {
         console.log("started hit via automatic check");
         start_HIT();
     }

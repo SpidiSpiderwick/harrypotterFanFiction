@@ -131,70 +131,24 @@
 <crowd-form id="workform" answer-format="flatten-objects">
 
     <span id="qualidiv">
-        <div>
-            Ihnen wird ein englischer Satz vorgegeben, den Sie ins Deutsche übersetzen sollen. Inhaltlich geht
-            es um Fanfiction-Literatur von Harry Potter. Gegebenenfalls sind einige Begriffe bereits für das
-            Deutsch vorgegeben, diese sind zu übernehmen, z.B. the Dark Lord = der Dunkle Lord.
-            <br><br>
-            Das Ziel der Aufgabe besteht darin, einen idiomatischen Satz auf Deutsch zu formulieren, der
-            angesichts des spezifischen Kontexts passend und angemessen ist.
-            <br><br>
-            Für eine dem Kontext angemessene Übersetzung haben Sie die Möglichkeit, den jeweils vorhergien Satz
-            und den auf die zu übersetzende Einheit folgenden Satz einzusehen. Diese Sätze dienen lediglich der
-            Orientierung und sind nicht zu übersetzen.
-            <br><br>
-            Die Sätze, die weitere Anhaltspunkte und Kontext bieten und nicht zu übersetzen sind, sind blau
-            hinterlegt.
-            <br><br>
-            Das Übersetzen mithilfe von Software oder maschineller Übersetzung (etwa Google Translate oder
-            DeepL) ist nicht erlaubt und ist zu unterlassen. Worker, die von maschinellen Übersetzungstools
-            Gebrauch machen, werden für weitere Tasks blockiert. Ergebnisse, die nicht den Vorgaben entsprechen,
-            werden abgelehnt.
-            <br><br>
-            <details>
-                <summary>BEISPIEL</summary>
-                <br>
-                Übersetzen Sie diesen Satz:
-                <br><br>
-                <span style="font-size: xx-large">But I would never have imagined sharpening a <span
-                        class="my_blue">Hufflepuff</span>’s bones into weapons.</span>
-                <br><br>
-                Verwenden Sie diese Übersetzungen:
-                <br>
-                <span class="my_blue">Hufflepuff</span> -> Hufflepuff<br><br>
-                <table style="border-collapse:separate;border-spacing:50px 0;width:650px;table-layout:fixed">
-                    <tr>
-                        <td class="examplecell"><b>Vorheriger Kontext:</b></td>
-                        <td class="examplecell"><b>Folgender Kontext:</b></td>
-                    </tr>
-                    <tr>
-                        <td class="examplecell">I looked over to the skeleton, knowing exactly what I had to do.</td>
-                        <td class="examplecell">Yet, I reached over.</td>
-                    </tr>
-                </table>
-                <br><br>
-                Da Hufflepuff vorgegeben ist, muss dieser Begriff nicht übersetzt werden, Genus und Kasus soll im
-                Deutschen natürlich angepasst und grammatikalisch korrekt wiedergegeben werden. Alle übrigen Wörter
-                sollen sie kontextgerecht nach ihrem Empfinden übersetzen. Die Sätze unterhalb sollen nicht übersetzt
-                werden und dienen lediglich zum besseren Verständnis des Satzes im Kontext.
-                <br><br>
-                Eine beispielhafte Übersetzung lautet:
-                <br><br>
-                Aber ich hätte niemals daran gedacht, aus den Knochen eines Hufflepuffs eine Waffe zu schnitzen.
-            </details>
-        </div>
 
-        <hr>
+
+       <hr>
 
         <div id="errorBox"></div>
 
         <div style="margin:0 auto">
             <p>
-                Bitte übersetzen Sie einmalig den Satz:<br><br><span style="font-size: xx-large">my horse jack is running home</span><br><br>
-                um fortfahren zu können.
+                Bitte markieren Sie alle grammatikalisch richiten Deutsch Sätze.
             </p>
-            <crowd-text-area name="qualification" id="qualification" placeholder="Tippe hier..."></crowd-text-area>
-            <button onclick="qualibutton()">OK</button>
+            <fieldset>
+                <legend>What is Your Favorite Pet?</legend>
+                <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>
+                <input type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>
+                <input type="checkbox" name="favorite_pet" value="Birds">Birds<br>
+                <button onclick="qualibutton()">OK</button>
+            </fieldset>
+
         </div>
 
     </span>
@@ -289,15 +243,15 @@
         <div class="container">
         <div class="fixed center">
             <p>Satz 1:</p>
-            <img class="centerpic" src=${image_url} alt="alternatetext1">
+            <img class="centerpic" src=${image_url1} alt="alternatetext1">
         </div>
         <div class="fixed center">
             <p>Satz 2:</p>
-            <img class="centerpic" src=${image_url} alt="alternatetext2">
+            <img class="centerpic" src=${image_url2} alt="alternatetext2">
         </div>
         <div class="fixed center">
             <p>Satz 3:</p>
-            <img class="centerpic" src=${image_url} alt="alternatetext3">
+            <img class="centerpic" src=${image_url3} alt="alternatetext3">
         </div>
         </div>
         <div>
@@ -337,13 +291,7 @@
     let qualification = document.getElementById("qualification");
 
     function qualibutton() {
-        let answer = qualification.value.trim().toLowerCase().replace("gerade", "").replace("läuft", "rennt");
-        if (answer.levenshtein("mein pferd jack rennt nach hause") > 3) {
-            document.getElementById("errorBox").innerHTML = "<crowd-alert type='error' dismissible>Sie haben die Testabfrage nicht korrekt beantworten können. Bitte versuchen Sie es erneut oder schließen sie den HIT.</crowd-alert>";
-            qualification.value = "";
-        } else {
-            start_HIT();
-        }
+        start_HIT()
     }
 
     function start_HIT() {

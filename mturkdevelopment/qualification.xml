@@ -1,0 +1,52 @@
+<QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
+    <Question>
+        <QuestionIdentifier>1</QuestionIdentifier>
+        <DisplayName>Qualification Question 1</DisplayName>
+        <QuestionContent>
+            <Title>Qualification Question 1</Title>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>1</SelectionIdentifier>
+                        <Text>First Sentence</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>2</SelectionIdentifier>
+                        <Text>Second Sentence</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>3</SelectionIdentifier>
+                        <Text>Third Sentence</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>2</QuestionIdentifier>
+        <DisplayName>Qualification Question 2</DisplayName>
+        <QuestionContent>
+            <Title>Qualification Question 2</Title>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>1</SelectionIdentifier>
+                        <Text>First Sentence</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>2</SelectionIdentifier>
+                        <Text>Second Sentence</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>3</SelectionIdentifier>
+                        <Text>Third Sentence</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+</QuestionForm>

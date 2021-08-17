@@ -126,47 +126,27 @@
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
-<!-- You must include crowd-form so that your task submits answers to MTurk ${image_url} -->
 
 <crowd-form id="workform" answer-format="flatten-objects">
-
-    <span id="qualidiv">
-
-
-       <hr>
-
-        <div id="errorBox"></div>
-
-        <div style="margin:0 auto">
-            <p>
-                Bitte markieren Sie alle grammatikalisch richiten Deutsch Sätze.
-            </p>
-            <fieldset>
-                <legend>What is Your Favorite Pet?</legend>
-                <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>
-                <input type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>
-                <input type="checkbox" name="favorite_pet" value="Birds">Birds<br>
-                <button onclick="qualibutton()">OK</button>
-            </fieldset>
-
-        </div>
-
-    </span>
-
-    <span id="workdiv" style="visibility: hidden">
-
-        <crowd-instructions link-text="View instructions" link-type="button">
+    <crowd-instructions link-text="View instructions" link-type="button">
         <short-summary>
             <p> Bitte schreiben Sie einen idiomatischen deutschen Satz aus den vorgegebenen Sätzen.
-                Sie können einen Satz aus den drei vorgeschlagenen auswählen oder einen völlig neuen Satz aus den vorgeschlagenen Sätzen bilden.
-                Achten Sie darauf, einen deutschen Satz zu formulieren, den Sie als idiomatisch und dem spezifischen Kontext angemessen betrachten.</p>
+                Sie können einen Satz aus den drei vorgeschlagenen auswählen oder einen völlig neuen Satz aus den
+                vorgeschlagenen Sätzen bilden.
+                Achten Sie darauf, einen deutschen Satz zu formulieren, den Sie als idiomatisch und dem spezifischen
+                Kontext angemessen betrachten.</p>
         </short-summary>
 
         <detailed-instructions>
             <p>
-                Bitte formulieren Sie einen deutschen Satz anhand der Ihnen vorgeschlagenen Sätze. Sie können entweder einen der drei Sätze auswählen oder einen neuen Satz aus den vorgeschlagenen kreieren.
+                Bitte formulieren Sie einen deutschen Satz anhand der Ihnen vorgeschlagenen Sätze. Sie können entweder
+                einen der drei Sätze auswählen oder einen neuen Satz aus den vorgeschlagenen kreieren.
                 <br><br>
-                Ziel ist es, aus den bereits vorgegebenen Sätzen einen idiomatischen und kontextgerechten Satz zu formulieren. Dieser soll inhaltlich verständlich, grammatikalisch korrekt und Ihres Erachtens dem Kontext angemessen sein. Falls Sie der Meinung sind, dass einer der Sätze diese gegebenen Kriterien bereits erfüllt, können Sie diesen Satz übernehmen. Ansonsten können Sie einzelne Bestandteile der vorgeschlagenen Sätze nutzen, um einen neuen Satz zu produzieren.
+                Ziel ist es, aus den bereits vorgegebenen Sätzen einen idiomatischen und kontextgerechten Satz zu
+                formulieren. Dieser soll inhaltlich verständlich, grammatikalisch korrekt und Ihres Erachtens dem
+                Kontext angemessen sein. Falls Sie der Meinung sind, dass einer der Sätze diese gegebenen Kriterien
+                bereits erfüllt, können Sie diesen Satz übernehmen. Ansonsten können Sie einzelne Bestandteile der
+                vorgeschlagenen Sätze nutzen, um einen neuen Satz zu produzieren.
                 <br><br>
 
                 <b> BEISPIEL</b>
@@ -180,13 +160,15 @@
                 3. „In Ordnung“, sagte der Rektor, „dann eben aus dem Kopf.“ <br>
                 <br><br>
 
-                Sie entscheiden sich dazu, einen neuen Satz aus den drei Vorschlägen zu formulieren, da Sie von keinem der drei Vorschläge zu 100 % überzeugt sind:
+                Sie entscheiden sich dazu, einen neuen Satz aus den drei Vorschlägen zu formulieren, da Sie von keinem
+                der drei Vorschläge zu 100 % überzeugt sind:
                 <br><br>
 
                 „In Ordnung“, sagte der Schulleiter, „dann eben aus deinem Gedächtnis.“
                 <br><br>
 
-                Sie haben Teile der drei vorgeschlagenen Sätze genutzt und einen neuen Satz kreiert, der grammatikalisch und inhaltlich korrekt ist und dem Kontext angepasst ist.
+                Sie haben Teile der drei vorgeschlagenen Sätze genutzt und einen neuen Satz kreiert, der grammatikalisch
+                und inhaltlich korrekt ist und dem Kontext angepasst ist.
                 <br><br>
 
             </p>
@@ -194,11 +176,11 @@
 
     </crowd-instructions>
 
-        <div>
-            <h4>Erstellen Sie eine Synthese aus den folgenden Sätzen.</h4>
-            <p>Behalten Sie die blau markierten Wörter bei, diese sollen nicht geändert werden.</p>
-        </div>
-        <div class="container">
+    <div>
+        <h4>Erstellen Sie eine Synthese aus den folgenden Sätzen.</h4>
+        <p>Behalten Sie die blau markierten Wörter bei, diese sollen nicht geändert werden.</p>
+    </div>
+    <div class="container">
         <div class="fixed center">
             <p>Satz 1:</p>
             <img class="centerpic" src=${image_url1} alt="alternatetext1">
@@ -211,24 +193,23 @@
             <p>Satz 3:</p>
             <img class="centerpic" src=${image_url3} alt="alternatetext3">
         </div>
-        </div>
-        <div>
+    </div>
+    <div>
 
         <crowd-text-area name="translation" id="translation" rows="2" placeholder="Fügen Sie die Synthese hier ein..."
                          class="fixed_very_long"
                          required></crowd-text-area>
-        </div>
-        <body onload="starttime()"></body>
-        <body onsubmit="savealerts(); timealert()"></body>
+    </div>
+    <body onload="starttime()"></body>
+    <body onsubmit="savealerts(); timealert()"></body>
 
 
-        <crowd-button form-action="submit">Submit</crowd-button>
+    <crowd-button form-action="submit">Submit</crowd-button>
 
 
-        <crowd-text-area id="keylog" name="keylog" rows="1" style="visibility: hidden"></crowd-text-area>
-        <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
-        <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
-    </span>
+    <crowd-text-area id="keylog" name="keylog" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
 </crowd-form>
 
 <script>
@@ -243,33 +224,8 @@
             keylogfield.value += key;
         }
     }
-</script>
 
-<script>
-    let qualification = document.getElementById("qualification");
-
-    function qualibutton() {
-        start_HIT()
-    }
-
-    const workerId = new URLSearchParams(window.location.search).get('workerId');
-
-    function start_HIT() {
-        document.getElementById("qualidiv").style.display = "none";
-        document.getElementById("qualidiv").style.maxHeight = "0";
-        document.getElementById("workdiv").style.visibility = "visible";
-        initkeylogger();
-        localStorage.setItem(workerId, "1");
-    }
-
-    console.log(window.location.search);
-    console.log(new URLSearchParams(window.location.search));
-    console.log(workerId);
-    console.log(document.cookie);
-    if (String(document.cookie).includes(workerId + "=1") || localStorage.getItem(workerId) === "1") {
-        console.log("started hit via automatic check");
-        start_HIT();
-    }
+    initkeylogger();
 </script>
 
 <script>

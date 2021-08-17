@@ -1,24 +1,23 @@
 <QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
     <Question>
         <QuestionIdentifier>1</QuestionIdentifier>
-        <DisplayName>Qualification Question 1</DisplayName>
         <QuestionContent>
-            <Title>Qualification Question 1</Title>
+            <Title>Wählen Sie den grammatikalisch einwandfreien Satz:</Title>
         </QuestionContent>
         <AnswerSpecification>
             <SelectionAnswer>
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>1</SelectionIdentifier>
-                        <Text>First Sentence</Text>
+                        <Text>Die Kombination aus Hitze, geringer Luftfeuchtigkeit und starkem Wind sind die Hauptursache für Waldbrände.</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>2</SelectionIdentifier>
-                        <Text>Second Sentence</Text>
+                        <Text>Der Fokus im Klimaschutz liegt auf den verbliebenen Aufgaben älterer Generationen.</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>3</SelectionIdentifier>
-                        <Text>Third Sentence</Text>
+                        <Text>Der steigende Meeresspiegel wird immer gefährlicher. Um dieser vorzubeugen, hätte man vor Jahren Maßnahmen ergreifen müssen.</Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>
@@ -26,24 +25,23 @@
     </Question>
     <Question>
         <QuestionIdentifier>2</QuestionIdentifier>
-        <DisplayName>Qualification Question 2</DisplayName>
         <QuestionContent>
-            <Title>Qualification Question 2</Title>
+            <Title>Wählen Sie den grammatikalisch einwandfreien Satz:</Title>
         </QuestionContent>
         <AnswerSpecification>
             <SelectionAnswer>
                 <Selections>
                     <Selection>
                         <SelectionIdentifier>1</SelectionIdentifier>
-                        <Text>First Sentence</Text>
+                        <Text>Das Aussterben bedrohter Tierarten, die zunehmende Verschmutzung und das Auftreten von Mikroplastik zählt zu den Sorgen von Klimaaktivisten.</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>2</SelectionIdentifier>
-                        <Text>Second Sentence</Text>
+                        <Text>In dem mehr unverpackt gekauft und recycelt wird, soll Plastik eingespart werden.</Text>
                     </Selection>
                     <Selection>
                         <SelectionIdentifier>3</SelectionIdentifier>
-                        <Text>Third Sentence</Text>
+                        <Text>Um in Zukunft sicherer leben zu können, ziehen Menschen zunehmend von potentiell gefährlichen Gewässern weg.</Text>
                     </Selection>
                 </Selections>
             </SelectionAnswer>

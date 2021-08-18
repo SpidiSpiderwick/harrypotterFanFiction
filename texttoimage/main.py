@@ -126,7 +126,7 @@ def generate_image_from_text(
     image_out_path: str,
     di,
     text_width: int = 50,
-    font_size: int = 11,
+    font_size: int = 26,
     font: str = "./fonts/DejaVuSans.ttf",
     col_bg: str = "#ffffff",
     col_fg: str = "#000000",

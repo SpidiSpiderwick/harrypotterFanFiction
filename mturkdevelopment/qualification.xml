@@ -1,0 +1,50 @@
+<QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
+    <Question>
+        <QuestionIdentifier>1</QuestionIdentifier>
+        <QuestionContent>
+            <Title>Wählen Sie den grammatikalisch einwandfreien Satz:</Title>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>1</SelectionIdentifier>
+                        <Text>Die Kombination aus Hitze, geringer Luftfeuchtigkeit und starkem Wind sind die Hauptursache für Waldbrände.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>2</SelectionIdentifier>
+                        <Text>Der Fokus im Klimaschutz liegt auf den verbliebenen Aufgaben älterer Generationen.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>3</SelectionIdentifier>
+                        <Text>Der steigende Meeresspiegel wird immer gefährlicher. Um dieser vorzubeugen, hätte man vor Jahren Maßnahmen ergreifen müssen.</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>2</QuestionIdentifier>
+        <QuestionContent>
+            <Title>Wählen Sie den grammatikalisch einwandfreien Satz:</Title>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>1</SelectionIdentifier>
+                        <Text>Das Aussterben bedrohter Tierarten, die zunehmende Verschmutzung und das Auftreten von Mikroplastik zählt zu den Sorgen von Klimaaktivisten.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>2</SelectionIdentifier>
+                        <Text>In dem mehr unverpackt gekauft und recycelt wird, soll Plastik eingespart werden.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>3</SelectionIdentifier>
+                        <Text>Um in Zukunft sicherer leben zu können, ziehen Menschen zunehmend von potentiell gefährlichen Gewässern weg.</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+</QuestionForm>

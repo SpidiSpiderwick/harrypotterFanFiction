@@ -78,6 +78,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            max-width: 30vw;
+            height: auto
         }
 
         .arrow {
@@ -133,52 +135,66 @@
             <p> Bitte schreiben Sie einen idiomatischen deutschen Satz aus den vorgegebenen Sätzen.
                 Sie können einen Satz aus den drei vorgeschlagenen auswählen oder einen völlig neuen Satz aus den
                 vorgeschlagenen Sätzen bilden.
-                Achten Sie darauf, einen deutschen Satz zu formulieren, den Sie als idiomatisch und dem spezifischen
-                Kontext angemessen betrachten.</p>
+                Achten Sie darauf, einen deutschen Satz zu formulieren, den Sie als idiomatisch, <b>grammatikalisch und
+                ortographisch korrekt</b> und dem spezifischen Kontext angemessen betrachten.</p>
+                <br><br>
+                <div style="background-color: #ff554d;">
+                    <h3>Achtung! Folgende Abgaben werden abgelehnt:</h3>
+                    <ul>
+                        <li>keine Verwendung von Satzzeichen (Kommata, Punkte, Anführungszeichen, etc.)</li>
+                        <li>Nichtbeachtung von Groß- und Kleinschreibung</li>
+                        <li>Fehlen der vorgegebenen Wörter (falls vorhanden)</li>
+                    </ul>
+                </div>
         </short-summary>
 
         <detailed-instructions>
             <p>
-                Bitte formulieren Sie einen deutschen Satz anhand der Ihnen vorgeschlagenen Sätze. Sie können entweder
+                Bitte formulieren Sie <b>einen</b> deutschen Satz anhand der Ihnen vorgeschlagenen Sätze. Sie können entweder
                 einen der drei Sätze auswählen oder einen neuen Satz aus den vorgeschlagenen kreieren.
                 <br><br>
                 Ziel ist es, aus den bereits vorgegebenen Sätzen einen idiomatischen und kontextgerechten Satz zu
-                formulieren. Dieser soll inhaltlich verständlich, grammatikalisch korrekt und Ihres Erachtens dem
-                Kontext angemessen sein. Falls Sie der Meinung sind, dass einer der Sätze diese gegebenen Kriterien
+                formulieren. Dieser soll <b>inhaltlich verständlich, grammatikalisch korrekt und Ihres Erachtens dem
+                Kontext angemessen sein</b>. Falls Sie der Meinung sind, dass einer der Sätze diese gegebenen Kriterien
                 bereits erfüllt, können Sie diesen Satz übernehmen. Ansonsten können Sie einzelne Bestandteile der
                 vorgeschlagenen Sätze nutzen, um einen neuen Satz zu produzieren.
                 <br><br>
-
-                <b> BEISPIEL</b>
-                <br><br>
-
-                Sie bekommen folgende Sätze vorgeschlagen:
-                <br><br>
-
-                1. Na gut, sagte der Schulleiter, dann aus deiner Erinnerung. <br>
-                2. „Okay“, sagte der Direktor, „dann eben aus dem Gedächtnis.“ <br>
-                3. „In Ordnung“, sagte der Rektor, „dann eben aus dem Kopf.“ <br>
-                <br><br>
-
-                Sie entscheiden sich dazu, einen neuen Satz aus den drei Vorschlägen zu formulieren, da Sie von keinem
-                der drei Vorschläge zu 100 % überzeugt sind:
-                <br><br>
-
-                „In Ordnung“, sagte der Schulleiter, „dann eben aus deinem Gedächtnis.“
-                <br><br>
-
-                Sie haben Teile der drei vorgeschlagenen Sätze genutzt und einen neuen Satz kreiert, der grammatikalisch
-                und inhaltlich korrekt ist und dem Kontext angepasst ist.
-                <br><br>
-
+                <div style="background-color: #ff554d;">
+                    <h3>Achtung! Folgende Abgaben werden abgelehnt:</h3>
+                    <ul>
+                        <li>keine Verwendung von Satzzeichen (Kommata, Punkte, Anführungszeichen, etc.)</li>
+                        <li>Nichtbeachtung von Groß- und Kleinschreibung</li>
+                        <li>Fehlen der vorgegebenen Wörter (falls vorhanden)</li>
+                    </ul>
+                </div>
             </p>
         </detailed-instructions>
+
+        <positive-example>
+            Sie bekommen folgende Sätze vorgeschlagen:
+            <br><br>
+
+            1. Na gut, sagte der Schulleiter, dann aus deiner Erinnerung. <br>
+            2. „Okay“, sagte der Direktor, „dann eben aus dem Gedächtnis.“ <br>
+            3. „In Ordnung“, sagte der Rektor, „dann eben aus dem Kopf.“ <br>
+            <br><br>
+
+            Sie entscheiden sich dazu, einen neuen Satz aus den drei Vorschlägen zu formulieren, da Sie von keinem
+            der drei Vorschläge zu 100 % überzeugt sind:
+            <br><br>
+
+            „In Ordnung“, sagte der Schulleiter, „dann eben aus deinem Gedächtnis.“
+            <br><br>
+
+            Sie haben Teile der drei vorgeschlagenen Sätze genutzt und einen neuen Satz kreiert, der grammatikalisch
+            und inhaltlich korrekt ist und dem Kontext angepasst ist.
+        </positive-example>
 
     </crowd-instructions>
 
     <div>
         <h4>Erstellen Sie eine Synthese aus den folgenden Sätzen.</h4>
-        <p>Behalten Sie die blau markierten Wörter bei, diese sollen nicht geändert werden.</p>
+        <div id="suggestions"></div>
     </div>
     <div class="container">
         <div class="fixed center">
@@ -235,11 +251,11 @@
     str = str.replace(/'/g, '"');
     let suggestions = JSON.parse(str);
     if (suggestions && !$.isEmptyObject(suggestions)) {
-        sugg_div.innerHTML += "<p>Verwenden Sie diese Übersetzungen:";
+        sugg_div.innerHTML += "Behalten Sie diese Wörter bei: ";
         for (const [eng, ger] of Object.entries(suggestions)) {
-            sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + eng + '</span> &#8594; ' + ger + '<br>';
+            sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + ger + '</span>, ';
         }
-        sugg_div.innerHTML += "</p>";
+        sugg_div.innerHTML = sugg_div.innerHTML.substring(0, sugg_div.innerHTML.length - 2);
     }
 </script>
 

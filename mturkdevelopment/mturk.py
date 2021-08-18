@@ -22,7 +22,7 @@ def create_quali():
                                                 Test=test,
                                                 AnswerKey=answerKey,
                                                 TestDurationInSeconds=300,
-                                                # RetryDelayInSeconds=0,
+                                                RetryDelayInSeconds=300,
                                                 AutoGranted=False)
 
 

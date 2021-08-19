@@ -1,4 +1,3 @@
-import argparse
 import csv
 import os
 
@@ -6,9 +5,6 @@ from texttoimage.main import generate_image_from_text
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        "A program to generate an image from a given text."
-    )
 
     font_size = 26
     margin = 6

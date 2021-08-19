@@ -1,0 +1,27 @@
+<QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd">
+    <Question>
+        <QuestionIdentifier>1</QuestionIdentifier>
+        <QuestionContent>
+            <Text>
+                Bitte wähle Sie die korrekte Übersetzung des Satzes:
+            </Text>
+            <List>
+                <ListItem>My horse jack is running home.</ListItem>
+            </List>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+                <Selections>
+                    <Selection>
+                        <SelectionIdentifier>1</SelectionIdentifier>
+                        <Text>Mein Pferdeheber rennt nach Hause.</Text>
+                    </Selection>
+                    <Selection>
+                        <SelectionIdentifier>2</SelectionIdentifier>
+                        <Text>Mein Pferd Jack rennt nach Hause.</Text>
+                    </Selection>
+                </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+</QuestionForm>

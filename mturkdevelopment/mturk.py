@@ -8,7 +8,7 @@ client = boto3.client('mturk', endpoint_url=production, region_name='us-east-1',
                       aws_secret_access_key=secretkey)
 
 
-def create_quali():
+def create_grammar_quali():
     desc = "Diese Qualification zeigt, dass Sie in der Lage sind, einen grammatikalisch und orthographisch korrekten " \
            "deutschen Satz zu bilden. Außerdem ermöglicht sie Ihnen, unsere Tasks zur Satzsynthese durchzuführen."
     with open("qualification.xml", "r", encoding="utf-8") as quxml:
@@ -26,5 +26,22 @@ def create_quali():
                                                 AutoGranted=False)
 
 
+def create_translate_quali():
+    desc = "Hiermit qualifizieren Sie sich, Englisch - Deutsch zu übersetzen."
+    with open("translate_quali.xml", "r", encoding="utf-8") as quxml:
+        test = quxml.read()
+    with open("translate_answ.xml", "r", encoding="utf-8") as anxml:
+        answerKey = anxml.read()
+    response = client.create_qualification_type(Name="Translater",
+                                                Keywords="Satz,Translation",
+                                                Description=desc,
+                                                QualificationTypeStatus="Active",
+                                                Test=test,
+                                                AnswerKey=answerKey,
+                                                TestDurationInSeconds=300,
+                                                # RetryDelayInSeconds=0,
+                                                AutoGranted=False)
+
+
 if __name__ == '__main__':
-    create_quali()
+    create_translate_quali()

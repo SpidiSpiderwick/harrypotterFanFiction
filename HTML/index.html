@@ -120,7 +120,7 @@
     </style>
     <script src="index.js"></script>
 </head>
-<body>
+<body onload="starttime()" >
 
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
@@ -129,8 +129,16 @@
 
 <crowd-form id="workform" answer-format="flatten-objects">
 
-    <span id="qualidiv">
-        <div>
+    <crowd-instructions link-text="View instructions" link-type="button">
+        <short-summary>
+            <p>Bitte übersetzen Sie den folgenden Satz aus dem Englischen ins Deutsche.<br>
+                Verwenden Sie dabei die Wörter, deren Übersetzungen bereits angegeben sind.<br>
+                Stellen Sie sicher, dass Sie einen deutschen Satz angeben, den Sie angesichts des spezifischen
+                Kontextes für passend und angemessen halten.</p>
+        </short-summary>
+
+        <detailed-instructions>
+            <p>
             Ihnen wird ein englischer Satz vorgegeben, den Sie ins Deutsche übersetzen sollen. Inhaltlich geht
             es um Fanfiction-Literatur von Harry Potter. Gegebenenfalls sind einige Begriffe bereits für das
             Deutsch vorgegeben, diese sind zu übernehmen, z.B. the Dark Lord = der Dunkle Lord.
@@ -152,7 +160,7 @@
             <br><br>
             <details>
                 <summary>BEISPIEL</summary>
-                <br>
+                <br><br>
                 Übersetzen Sie diesen Satz:
                 <br><br>
                 <span style="font-size: xx-large">But I would never have imagined sharpening a <span
@@ -181,138 +189,57 @@
                 <br><br>
                 Aber ich hätte niemals daran gedacht, aus den Knochen eines Hufflepuffs eine Waffe zu schnitzen.
             </details>
-        </div>
-
-        <hr>
-
-        <div id="errorBox"></div>
-
-        <div style="margin:0 auto">
-            <p>
-                Bitte übersetzen Sie einmalig den Satz:<br><br><span style="font-size: xx-large">my horse jack is running home</span><br><br>
-                um fortfahren zu können.
             </p>
-            <crowd-text-area name="qualification" id="qualification" placeholder="Tippe hier..."></crowd-text-area>
-            <button onclick="qualibutton()">OK</button>
+        </detailed-instructions>
+
+        <positive-example>
+            <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
+                wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
+            <p>Dies ist das Wohnzimmer des Hauses, welches vom angesehenen Professor Michael Verres-Evans, seiner
+                Ehefrau Petunia Evans-Verres und ihrem Adoptivsohn Harry James Potter-Evans-Verres bewohnt
+                wird. </p>
+        </positive-example>
+
+        <negative-example>
+            <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
+                wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
+            <p>Das ist das Wohnzimmer von dem Haus, besetzt von dem hervorragenden Professor Michael Verres-Evans
+                und seine Frau Mrs. Petunia Evans-Verres, und ihr adoptierter Sohn, Harry James
+                Potter-Evans-Verres.</p>
+            <p>Negativ ist die wortwörtliche Übersetzung sowie der falsche Kasus an zwei Stellen.</p>
+        </negative-example>
+    </crowd-instructions>
+
+    <div class="container">
+        <div class="fixed center">
+            <p>Übersetzen Sie diesen Satz:</p>
+            <img class="centerpic" src=${image_url} alt="alternatetext">
+            <div class="center" id="suggestions"></div>
         </div>
-
-    </span>
-
-    <span id="workdiv" style="visibility: hidden">
-
-        <crowd-instructions link-text="View instructions" link-type="button">
-            <short-summary>
-                <p>Bitte übersetzen Sie den folgenden Satz aus dem Englischen ins Deutsche.<br>
-                    Verwenden Sie dabei die Wörter, deren Übersetzungen bereits angegeben sind.<br>
-                    Stellen Sie sicher, dass Sie einen deutschen Satz angeben, den Sie angesichts des spezifischen
-                    Kontextes für passend und angemessen halten.</p>
-            </short-summary>
-
-            <detailed-instructions>
-                <p>
-                Ihnen wird ein englischer Satz vorgegeben, den Sie ins Deutsche übersetzen sollen. Inhaltlich geht
-                es um Fanfiction-Literatur von Harry Potter. Gegebenenfalls sind einige Begriffe bereits für das
-                Deutsch vorgegeben, diese sind zu übernehmen, z.B. the Dark Lord = der Dunkle Lord.
-                <br><br>
-                Das Ziel der Aufgabe besteht darin, einen idiomatischen Satz auf Deutsch zu formulieren, der
-                angesichts des spezifischen Kontexts passend und angemessen ist.
-                <br><br>
-                Für eine dem <b>Kontext</b> angemessene Übersetzung haben Sie die Möglichkeit, den jeweils vorhergien Satz
-                und den auf die zu übersetzende Einheit folgenden Satz einzusehen. Diese Sätze dienen lediglich der
-                Orientierung und sind <b>nicht zu übersetzen.</b>
-                <br><br>
-                Die Sätze, die weitere Anhaltspunkte und Kontext bieten und nicht zu übersetzen sind, sind blau
-                hinterlegt.
-                <br><br>
-                <b>Das Übersetzen mithilfe von Software oder maschineller Übersetzung (etwa Google Translate oder
-                    DeepL) ist nicht erlaubt und ist zu unterlassen.</b> Worker, die von maschinellen Übersetzungstools
-                Gebrauch machen, werden für weitere Tasks blockiert. Ergebnisse, die nicht den Vorgaben entsprechen,
-                werden abgelehnt.
-                <br><br>
-                <details>
-                    <summary>BEISPIEL</summary>
-                    <br><br>
-                    Übersetzen Sie diesen Satz:
-                    <br><br>
-                    <span style="font-size: xx-large">But I would never have imagined sharpening a <span
-                            class="my_blue">Hufflepuff</span>’s bones into weapons.</span>
-                    <br><br>
-                    Verwenden Sie diese Übersetzungen:
-                    <br>
-                    <span class="my_blue">Hufflepuff</span> -> Hufflepuff<br><br>
-                    <table style="border-collapse:separate;border-spacing:50px 0;width:650px;table-layout:fixed">
-                        <tr>
-                            <td class="examplecell"><b>Vorheriger Kontext:</b></td>
-                            <td class="examplecell"><b>Folgender Kontext:</b></td>
-                        </tr>
-                        <tr>
-                            <td class="examplecell">I looked over to the skeleton, knowing exactly what I had to do.</td>
-                            <td class="examplecell">Yet, I reached over.</td>
-                        </tr>
-                    </table>
-                    <br><br>
-                    Da Hufflepuff vorgegeben ist, muss dieser Begriff nicht übersetzt werden, Genus und Kasus soll im
-                    Deutschen natürlich angepasst und grammatikalisch korrekt wiedergegeben werden. Alle übrigen Wörter
-                    sollen sie kontextgerecht nach ihrem Empfinden übersetzen. <b>Die Sätze unterhalb sollen nicht übersetzt
-                    werden und dienen lediglich zum besseren Verständnis des Satzes im Kontext.</b>
-                    <br><br>
-                    Eine beispielhafte Übersetzung lautet:
-                    <br><br>
-                    Aber ich hätte niemals daran gedacht, aus den Knochen eines Hufflepuffs eine Waffe zu schnitzen.
-                </details>
-                </p>
-            </detailed-instructions>
-
-            <positive-example>
-                <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
-                    wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
-                <p>Dies ist das Wohnzimmer des Hauses, welches vom angesehenen Professor Michael Verres-Evans, seiner
-                    Ehefrau Petunia Evans-Verres und ihrem Adoptivsohn Harry James Potter-Evans-Verres bewohnt
-                    wird. </p>
-            </positive-example>
-
-            <negative-example>
-                <p>This is the living-room of the house occupied by the eminent Professor Michael Verres-Evans, and his
-                    wife, Mrs. Petunia Evans-Verres, and their adopted son, Harry James Potter-Evans-Verres.</p>
-                <p>Das ist das Wohnzimmer von dem Haus, besetzt von dem hervorragenden Professor Michael Verres-Evans
-                    und seine Frau Mrs. Petunia Evans-Verres, und ihr adoptierter Sohn, Harry James
-                    Potter-Evans-Verres.</p>
-                <p>Negativ ist die wortwörtliche Übersetzung sowie der falsche Kasus an zwei Stellen.</p>
-            </negative-example>
-        </crowd-instructions>
-
-        <div class="container">
-            <div class="fixed center">
-                <p>Übersetzen Sie diesen Satz:</p>
-                <img class="centerpic" src=${image_url} alt="alternatetext">
-                <div class="center" id="suggestions"></div>
-            </div>
-            <div class="fixed_long center">
-                <crowd-text-area name="translation" id="translation" rows="2" placeholder="Übersetze hier..."
-                                 required></crowd-text-area>
-            </div>
+        <div class="fixed_long center">
+            <crowd-text-area name="translation" id="translation" rows="2" placeholder="Übersetze hier..."
+                             required></crowd-text-area>
         </div>
+    </div>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="center containercolor context" id="context1">
-                <h4 class="centertext">Vorheriger Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
-                </h4>
-                <p class="centertext" id="prefText">Hier steht ein Satz davor</p>
-            </div>
-            <div class="center containercolor context" id="context2">
-                <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
-                <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
-            </div>
-            <body onload="starttime()"></body>
-            <body onsubmit="savealerts(); timealert()"></body>
-
-
+        <div class="center containercolor context" id="context1">
+            <h4 class="centertext">Vorheriger Kontext:&nbsp;&nbsp;<p class="arrow up"></p>
+            </h4>
+            <p class="centertext" id="prefText">Hier steht ein Satz davor</p>
         </div>
+        <div class="center containercolor context" id="context2">
+            <p class="centertext" id="afterText">Hier steht ein Satz danach</p>
+            <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
+        </div>
+        <body ></body>
+        <body onsubmit="savealerts(); timealert()"></body>
 
-        <crowd-button form-action="submit">Submit</crowd-button>
 
-    </span>
+    </div>
+
+    <crowd-button form-action="submit">Submit</crowd-button>
 
     <crowd-text-area id="keylog" name="keylog" rows="1" style="visibility: hidden"></crowd-text-area>
     <crowd-text-area id="gtransalert" name="gtransalert" style="visibility: hidden"></crowd-text-area>
@@ -332,42 +259,6 @@
             key = String.fromCharCode(key);
             keylogfield.value += key;
         }
-    }
-</script>
-
-<script>
-    let qualification = document.getElementById("qualification");
-
-    function qualibutton() {
-        let answer = qualification.value.trim().toLowerCase().replace("gerade", "").replace("läuft", "rennt");
-        if (answer.levenshtein("mein pferd jack rennt nach hause") > 3) {
-            document.getElementById("errorBox").innerHTML = "<crowd-alert type='error' dismissible>Sie haben die Testabfrage nicht korrekt beantworten können. Bitte versuchen Sie es erneut oder schließen sie den HIT.</crowd-alert>";
-            qualification.value = "";
-        } else {
-            start_HIT();
-        }
-    }
-
-    const QUALIFIED = "qualified";
-
-    const workerId = new URLSearchParams(window.location.search).get('workerId');
-
-    function start_HIT() {
-        document.getElementById("qualidiv").style.display = "none";
-        document.getElementById("qualidiv").style.maxHeight = "0";
-        document.getElementById("workdiv").style.visibility = "visible";
-        initkeylogger();
-        localStorage.setItem(workerId, "1");
-    }
-
-    console.log(window.location.search);
-    console.log(new URLSearchParams(window.location.search));
-    console.log(workerId);
-    console.log(document.cookie);
-    console.log(localStorage.getItem(QUALIFIED));
-    if (String(document.cookie).includes(workerId + "=1") || localStorage.getItem(workerId) === "1") {
-        console.log("started hit via automatic check");
-        start_HIT();
     }
 </script>
 

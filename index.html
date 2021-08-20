@@ -211,7 +211,7 @@
     </crowd-instructions>
     <br><br>
     <input type="file" id="myfile" name="myfile" multiple>
-
+    <div><h4>Inputnumer ist: <p id="mynumber"></p> </h4></div>
     <script type="text/javascript">
         let currentindex = 0;
         let inputPic;
@@ -245,12 +245,14 @@
                 }
             }
             inputPic = lines;
-            showNextInput(currentindex)
+            showNextInput(currentindex);
         }
 
         function showNextInput(index){
-            document.getElementById('img').src = inputPic[index][1]
-            num = parseInt(inputPic[index][0])
+            document.getElementById('img').src = inputPic[index][1];
+            num = parseInt(inputPic[index][0]);
+            document.getElementById('mynumber').textContent = num;
+
 
             var current_text = text[num];
 
@@ -259,7 +261,7 @@
             let lower_context = document.getElementById("afterText");
             lower_context.innerHTML = get_context(num + 1);
 
-            currentindex = currentindex + 1
+            currentindex = currentindex + 1;
         }
     </script>
 

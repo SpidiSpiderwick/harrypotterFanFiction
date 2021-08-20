@@ -216,6 +216,8 @@
         let currentindex = 0;
         let inputPic;
         let imageurl;
+        let translation = [];
+        let howmany = 0;
 
         let input = document.getElementById("myfile");
         input.addEventListener("change", function () {
@@ -236,7 +238,6 @@
             for (var i=1; i<allTextLines.length; i++) {
                 var data = allTextLines[i].split(',');
                 if (data.length == headers.length) {
-
                     var tarr = [];
                     for (var j=0; j<headers.length; j++) {
                         tarr.push(data[j]);
@@ -249,6 +250,7 @@
         }
 
         function showNextInput(index){
+            console.log(inputPic);
             document.getElementById('img').src = inputPic[index][1];
             num = parseInt(inputPic[index][0]);
             document.getElementById('mynumber').textContent = num;
@@ -260,8 +262,20 @@
             upper_context.innerHTML = get_context(num - 1);
             let lower_context = document.getElementById("afterText");
             lower_context.innerHTML = get_context(num + 1);
+        }
 
+        function saveInputs(){
+            temp = document.getElementById("translation").value;
+            translation.push({'Number': parseInt(inputPic[currentindex][0]), 'Translation': temp});
+            console.log(translation);
+            howmany = howmany + 1;
             currentindex = currentindex + 1;
+            if(howmany == 10){
+                alert("Fertig, vielen Dank!")
+            }
+            else{
+                showNextInput(currentindex);
+            }
         }
     </script>
 
@@ -289,7 +303,7 @@
             <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
         </div>
         <body ></body>
-        <body onsubmit="showNextInput(currentindex)"></body>
+        <body onsubmit="saveInputs()"></body>
 
 
     </div>
@@ -300,6 +314,7 @@
     <crowd-text-area id="gtransalert" name="gtransalert" style="visibility: hidden"></crowd-text-area>
     <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
     <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
+    <div id="txt">Lorem Ipsum</div>
 
 </crowd-form>
 

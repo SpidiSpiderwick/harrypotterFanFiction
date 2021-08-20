@@ -126,7 +126,6 @@
       please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
 <!-- You must include crowd-form so that your task submits answers to MTurk ${image_url} -->
-<input type="file" id="myfile" name="myfile" multiple><br><br>
 
 <crowd-form id="workform" answer-format="flatten-objects">
 
@@ -210,11 +209,64 @@
             <p>Negativ ist die wortwörtliche Übersetzung sowie der falsche Kasus an zwei Stellen.</p>
         </negative-example>
     </crowd-instructions>
+    <br><br>
+    <input type="file" id="myfile" name="myfile" multiple>
+
+    <script type="text/javascript">
+        let currentindex = 0;
+        let inputPic;
+        let imageurl;
+
+        let input = document.getElementById("myfile");
+        input.addEventListener("change", function () {
+            loadFile(this.files[0]);
+        });
+        function loadFile(file){
+            let reader = new FileReader();
+            reader.readAsBinaryString(file); //liest die Datei als String ein
+            reader.onloadend = function(event){ //gibt an was passiert, wenn die Datei fertig geladen wurde
+                processData(reader.result);
+            }
+        }
+        function processData(allText) {
+            var allTextLines = allText.split(/\r\n|\n/);
+            var headers = allTextLines[0].split(',');
+            var lines = [];
+
+            for (var i=1; i<allTextLines.length; i++) {
+                var data = allTextLines[i].split(',');
+                if (data.length == headers.length) {
+
+                    var tarr = [];
+                    for (var j=0; j<headers.length; j++) {
+                        tarr.push(data[j]);
+                    }
+                    lines.push(tarr);
+                }
+            }
+            inputPic = lines;
+            showNextInput(currentindex)
+        }
+
+        function showNextInput(index){
+            document.getElementById('img').src = inputPic[index][1]
+            num = parseInt(inputPic[index][0])
+
+            var current_text = text[num];
+
+            let upper_context = document.getElementById("prefText");
+            upper_context.innerHTML = get_context(num - 1);
+            let lower_context = document.getElementById("afterText");
+            lower_context.innerHTML = get_context(num + 1);
+
+            currentindex = currentindex + 1
+        }
+    </script>
 
     <div class="container">
         <div class="fixed center">
             <p>Übersetzen Sie diesen Satz:</p>
-            <img class="centerpic" src=${image_url} alt="alternatetext">
+            <img class="centerpic" src="" alt="alternatetext" id="img">
             <div class="center" id="suggestions"></div>
         </div>
         <div class="fixed_long center">
@@ -235,7 +287,7 @@
             <h4 class="centertext">Folgender Kontext:&nbsp;&nbsp;<p class="arrow down"></p></h4>
         </div>
         <body ></body>
-        <body onsubmit="savealerts(); timealert()"></body>
+        <body onsubmit="showNextInput(currentindex)"></body>
 
 
     </div>

@@ -216,7 +216,7 @@
         let currentindex = 0;
         let inputPic;
         let imageurl;
-        let translation = [];
+        let translation = {};
         let howmany = 0;
 
         let input = document.getElementById("myfile");
@@ -237,7 +237,7 @@
 
             for (var i=1; i<allTextLines.length; i++) {
                 var data = allTextLines[i].split(',');
-                if (data.length == headers.length) {
+                if (data.length === headers.length) {
                     var tarr = [];
                     for (var j=0; j<headers.length; j++) {
                         tarr.push(data[j]);
@@ -266,17 +266,32 @@
 
         function saveInputs(){
             temp = document.getElementById("translation").value;
-            translation.push({'Number': parseInt(inputPic[currentindex][0]), 'Translation': temp});
+            translation[parseInt(inputPic[currentindex][0])] = temp
             console.log(translation);
             howmany = howmany + 1;
             currentindex = currentindex + 1;
-            if(howmany == 10){
+            if(howmany === inputPic.length){
                 alert("Fertig, vielen Dank!")
             }
             else{
                 showNextInput(currentindex);
             }
         }
+
+        function exportInputs(){
+            let a = document.createElement("a");
+            let fileName = Date.now().toString();
+            let fileToSave = new Blob([JSON.stringify(translation)], {
+                type: 'application/json',
+                name: fileName
+            });
+
+            a.href = URL.createObjectURL(fileToSave);
+            a.download = fileName;
+            a.click();
+
+        }
+
     </script>
 
     <div class="container">
@@ -314,7 +329,7 @@
     <crowd-text-area id="gtransalert" name="gtransalert" style="visibility: hidden"></crowd-text-area>
     <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
     <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
-    <div id="txt">Lorem Ipsum</div>
+    <button onclick="exportInputs()">Übersetzungen exportieren</button>
 
 </crowd-form>
 
@@ -444,12 +459,10 @@
 </script>
 
 <script>
-    let gtrans = "${gtrans}";
-    let dtrans = "${dtrans}";
-
     let translationfield = document.getElementById("translation");
 
     document.getElementById("workform").onsubmit = function (e) {
+        e.preventDefault();
         let answer = translationfield.value.simplify();
         if ((gtrans.levenshtein(answer) < percentToNumber(0.1, gtrans, answer))  || (dtrans.levenshtein(answer) < percentToNumber(0.1, dtrans, answer))) {
             let sure = confirm("Ihre angegebene Übersetzung hat große Ähnlichkeit zu Online-Übersetzungen dieses Satzes. Sollte der Satz nach Überprüfung als nicht idiomatisch bzw. als kopiert erkannt werden, wird diese Übersetzung abgelehnt. Möchten Sie die Übersetzung trotzdem einreichen?")

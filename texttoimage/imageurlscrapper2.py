@@ -27,7 +27,7 @@ if __name__ == '__main__':
     id2 = "3074cf589419a0f"
     id1 = "770af0b3627556b"
     headers = {'Authorization': f'Client-ID {id2}'}
-    chapter = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\translations'
+    chapter = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\translations2'
 
     files = [os.path.abspath(os.path.join(chapter, p)) for p in os.listdir(chapter)]
     files.sort()
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     with open(sugg_path, "r", encoding="utf-8") as sugg_file:
         suggestions = json.load(sugg_file)
 
-    task2csv = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\task2.csv'
+    task2csv = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\task2_2.csv'
 
     with open(task2csv, "w+", newline="", encoding="utf-8") as f:
         spamwriter = csv.writer(f, delimiter=",", quotechar='"')

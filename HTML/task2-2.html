@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        String.prototype.levenshtein = function (string) {
+            let a = this, b = string + "", m = [], i, j;
+
+            if (!(a && b)) return (b || a).length;
+
+            for (i = 0; i <= b.length; m[i] = [i++]) ;
+            for (j = 0; j <= a.length; m[0][j] = j++) ;
+
+            for (i = 1; i <= b.length; i++) {
+                for (j = 1; j <= a.length; j++) {
+                    m[i][j] = b.charAt(i - 1) == a.charAt(j - 1)
+                        ? m[i - 1][j - 1]
+                        : m[i][j] = Math.min(
+                            m[i - 1][j - 1] + 1,
+                            Math.min(m[i][j - 1] + 1, m[i - 1][j] + 1))
+                }
+            }
+
+            return m[b.length][a.length];
+        }
+        String.prototype.simplify = function () {
+            return this.replace(/[^a-zA-Z0-9\-äöüß]/, " ").replace(/ +/, " ").trim().toLowerCase();
+        }
+
+        function percentToNumber(percentage, gTrans, translationfield) {
+            return percentage * (gTrans.length + translationfield.length)
+        }
+    </script>
+    <style>
+
+        div {
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        .containercolor {
+            background-color: lightsteelblue;
+        }
+
+        .fixed {
+            width: 100px;
+        }
+
+        .fixed_long {
+            width: 500px;
+        }
+
+        .fixed_very_long {
+            width: 1000px;
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+        }
+
+        .centertext {
+            text-align: center;
+        }
+
+        i {
+            margin: 0 auto;
+        }
+
+        .centerpic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 30vw;
+            height: auto
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            text-align: center;
+            margin: 0px auto;
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .hovered {
+            border: solid red;
+        }
+
+        .context {
+
+        }
+
+        .examplecell {
+            background-color: lightsteelblue;
+            padding: 10px;
+            width: 300px;
+            text-align: center
+        }
+
+        .my_blue {
+            color: #A6A6FF;
+        }
+
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+
+<crowd-form id="workform" answer-format="flatten-objects">
+    <crowd-instructions link-text="View instructions" link-type="button">
+        <short-summary>
+            <p> Bitte schreiben Sie einen idiomatischen deutschen Satz aus den vorgegebenen Sätzen.
+                Sie können einen Satz aus den drei vorgeschlagenen auswählen oder einen völlig neuen Satz aus den
+                vorgeschlagenen Sätzen bilden.
+                Achten Sie darauf, einen deutschen Satz zu formulieren, den Sie als idiomatisch, <b>grammatikalisch und
+                ortographisch korrekt</b> und dem spezifischen Kontext angemessen betrachten.</p>
+                <br><br>
+                <div style="background-color: #ff554d;">
+                    <h3>Achtung! Folgende Abgaben werden abgelehnt:</h3>
+                    <ul>
+                        <li>keine Verwendung von Satzzeichen (Kommata, Punkte, Anführungszeichen, etc.)</li>
+                        <li>Nichtbeachtung von Groß- und Kleinschreibung</li>
+                        <li>Fehlen der vorgegebenen Wörter (falls vorhanden)</li>
+                    </ul>
+                </div>
+        </short-summary>
+
+        <detailed-instructions>
+            <p>
+                Bitte formulieren Sie <b>einen</b> deutschen Satz anhand der Ihnen vorgeschlagenen Sätze. Sie können entweder
+                einen der drei Sätze auswählen oder einen neuen Satz aus den vorgeschlagenen kreieren.
+                <br><br>
+                Ziel ist es, aus den bereits vorgegebenen Sätzen einen idiomatischen und kontextgerechten Satz zu
+                formulieren. Dieser soll <b>inhaltlich verständlich, grammatikalisch korrekt und Ihres Erachtens dem
+                Kontext angemessen sein</b>. Falls Sie der Meinung sind, dass einer der Sätze diese gegebenen Kriterien
+                bereits erfüllt, können Sie diesen Satz übernehmen. Ansonsten können Sie einzelne Bestandteile der
+                vorgeschlagenen Sätze nutzen, um einen neuen Satz zu produzieren.
+                <br><br>
+                <div style="background-color: #ff554d;">
+                    <h3>Achtung! Folgende Abgaben werden abgelehnt:</h3>
+                    <ul>
+                        <li>keine Verwendung von Satzzeichen (Kommata, Punkte, Anführungszeichen, etc.)</li>
+                        <li>Nichtbeachtung von Groß- und Kleinschreibung</li>
+                        <li>Fehlen der vorgegebenen Wörter (falls vorhanden)</li>
+                    </ul>
+                </div>
+            </p>
+        </detailed-instructions>
+
+        <positive-example>
+            Sie bekommen folgende Sätze vorgeschlagen:
+            <br><br>
+
+            1. Na gut, sagte der Schulleiter, dann aus deiner Erinnerung. <br>
+            2. „Okay“, sagte der Direktor, „dann eben aus dem Gedächtnis.“ <br>
+            3. „In Ordnung“, sagte der Rektor, „dann eben aus dem Kopf.“ <br>
+            <br><br>
+
+            Sie entscheiden sich dazu, einen neuen Satz aus den drei Vorschlägen zu formulieren, da Sie von keinem
+            der drei Vorschläge zu 100 % überzeugt sind:
+            <br><br>
+
+            „In Ordnung“, sagte der Schulleiter, „dann eben aus deinem Gedächtnis.“
+            <br><br>
+
+            Sie haben Teile der drei vorgeschlagenen Sätze genutzt und einen neuen Satz kreiert, der grammatikalisch
+            und inhaltlich korrekt ist und dem Kontext angepasst ist.
+        </positive-example>
+
+    </crowd-instructions>
+
+    <div>
+        <h4>Erstellen Sie eine Synthese aus den folgenden Sätzen.</h4>
+        <div id="suggestions"></div>
+    </div>
+    <div class="container">
+        <div class="fixed center">
+            <p>Satz 1:</p>
+            <img class="centerpic" src=${image_url1} alt="alternatetext1">
+        </div>
+        <div class="fixed center">
+            <p>Satz 2:</p>
+            <img class="centerpic" src=${image_url2} alt="alternatetext2">
+        </div>
+    </div>
+    <div>
+
+        <crowd-text-area name="translation" id="translation" rows="2" placeholder="Fügen Sie die Synthese hier ein..."
+                         class="fixed_very_long"
+                         required></crowd-text-area>
+    </div>
+    <body onload="starttime()"></body>
+    <body onsubmit="savealerts(); timealert()"></body>
+
+
+    <crowd-button form-action="submit">Submit</crowd-button>
+
+
+    <crowd-text-area id="keylog" name="keylog" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="keylogalert" name="keylogalert" rows="1" style="visibility: hidden"></crowd-text-area>
+    <crowd-text-area id="timealert" name="timealert" rows="1" style="visibility: hidden"></crowd-text-area>
+</crowd-form>
+
+<script>
+    let keylogfield = document.getElementById("keylog");
+
+    function initkeylogger() {
+        keylogfield.value = "";
+        document.onkeypress = function (e) {
+            get = window.event ? event : e;
+            key = get.keyCode ? get.keyCode : get.charCode;
+            key = String.fromCharCode(key);
+            keylogfield.value += key;
+        }
+    }
+
+    initkeylogger();
+</script>
+
+<script>
+    const my_blue = "#A6A6FF";
+    let sugg_div = document.getElementById("suggestions");
+    let str = "${suggestions}";
+    str = str.replace(/'/g, '"');
+    let suggestions = JSON.parse(str);
+    if (suggestions && !$.isEmptyObject(suggestions)) {
+        sugg_div.innerHTML += "Behalten Sie diese Wörter bei: ";
+        for (const [eng, ger] of Object.entries(suggestions)) {
+            sugg_div.innerHTML += '<span style="color:' + my_blue + ';">' + ger + '</span>, ';
+        }
+        sugg_div.innerHTML = sugg_div.innerHTML.substring(0, sugg_div.innerHTML.length - 2);
+    }
+</script>
+
+<script>
+    let start;
+
+    function savealerts() {
+        let workerinput = document.getElementById("translation");
+        let keylogalert = document.getElementById("keylogalert");
+        if (workerinput.value.length > keylogfield.value.length) {
+            keylogalert.value = "TRUE";
+        }
+    }
+
+    function starttime() {
+        start = Date.now();
+    }
+
+    function timealert() {
+        let timealert = document.getElementById("timealert");
+        if (Date.now() - start < 30000) {
+            timealert.value = "TRUE";
+        }
+    }
+
+</script>
+
+</body>
+</html>

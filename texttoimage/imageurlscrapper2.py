@@ -27,28 +27,28 @@ if __name__ == '__main__':
     id2 = "3074cf589419a0f"
     id1 = "770af0b3627556b"
     headers = {'Authorization': f'Client-ID {id2}'}
-    chapter = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\translations'
+    chapter = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\translations_two'
 
     files = [os.path.abspath(os.path.join(chapter, p)) for p in os.listdir(chapter)]
     files.sort()
     iterator = iter(files)
 
-    for first_index in range(0, len(files), 3):
-        if first_index / 3 < len(linkss):
+    for first_index in range(0, len(files), 2):
+        if first_index / 2 < len(linkss):
             continue
 
         first = files[first_index]
         second = files[first_index + 1]
-        third = files[first_index + 2]
 
         num = ntpath.basename(first)[0:3]
 
-        triple = []
+        twople = []
 
-        for file_path in (first, second, third):
+        for file_path in (first, second):
+            print(file_path)
             with open(file_path, "rb") as img_file:
                 img_b64_str = base64.b64encode(img_file.read()).decode("ascii")
-                print(img_b64_str)
+                # print(img_b64_str)
             upload_data = {
                 "image": img_b64_str,
                 "type": "base64",
@@ -60,18 +60,21 @@ if __name__ == '__main__':
                 with open(json_path, "w+") as jf:
                     json.dump(linkss, jf)
                 sys.exit(r.status_code)
-            triple.append(r.json()["data"]["link"])
+            twople.append(r.json()["data"]["link"])
 
-        linkss[int(num)] = triple
+        linkss[int(num)] = twople
+
+    with open(json_path, "w+") as jf:
+        json.dump(linkss, jf)
 
     sugg_path = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\REVhpsentences.txt.suggestions'
 
     with open(sugg_path, "r", encoding="utf-8") as sugg_file:
         suggestions = json.load(sugg_file)
 
-    task2csv = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\task2.csv'
+    task2csv = r'C:\Users\asib1\Documents\Asib\repos\harrypotterFanFiction\texttoimage\task2_two.csv'
 
     with open(task2csv, "w+", newline="", encoding="utf-8") as f:
         spamwriter = csv.writer(f, delimiter=",", quotechar='"')
-        spamwriter.writerow(["num", "image_url1", "image_url2", "image_url3", "suggestions"])
-        spamwriter.writerows([(num, links[0], links[1], links[2], suggestions[num]) for num, links in linkss.items()])
+        spamwriter.writerow(["num", "image_url1", "image_url2", "suggestions"])
+        spamwriter.writerows([(num, links[0], links[1], suggestions[int(num)]) for num, links in linkss.items()])

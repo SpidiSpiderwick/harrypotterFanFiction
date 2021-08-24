@@ -38,7 +38,7 @@ print(filted_sortedfinalselection)
 #keys = filted_sortedfinalselection[0].keys()
 keys = sortedfinalselect[0].keys()
 
-with open('manytranslationsOnly2.csv', 'w', newline='', encoding='utf-8')  as output_file:
+with open('results/manytranslationsOnly2.csv', 'w', newline='', encoding='utf-8')  as output_file:
     dict_writer = csv.DictWriter(output_file, keys)
     dict_writer.writeheader()
     dict_writer.writerows(sortedfinalselect)

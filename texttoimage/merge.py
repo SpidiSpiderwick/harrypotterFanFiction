@@ -16,7 +16,7 @@ if __name__ == "__main__":
     if not os.path.exists("translations"):
         os.mkdir("translations")
 
-    with open("manytranslations.csv", "r", encoding="utf-8") as mt:
+    with open("results/manytranslations.csv", "r", encoding="utf-8") as mt:
         mtreader = csv.DictReader(mt, fieldnames=["Input.num", "Translation"])
         headers = next(mtreader)
         counter = 0

@@ -18,8 +18,8 @@ if __name__ == '__main__':
 
     readparams = {"encoding": "utf-8", "newline": ""}
     Input_num = "Input.num"
-    Translations = "Translation"
-    fieldnames = [Input_num, Translations]
+    Translation = "Translation"
+    fieldnames = [Input_num, Translation]
 
     with open(m1_p, "r", **readparams) as m1:
         m1_reader = csv.DictReader(m1, fieldnames=fieldnames)
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     all_results.sort(key=lambda row: (int(row[Input_num]), row.get("flag", "")))
 
-    final_fieldnames = [Input_num, "flag", Translations]
+    final_fieldnames = [Input_num, "flag", Translation]
 
     with open(final_path, "w+", encoding="utf-8", newline="") as final:
         final_writer = csv.DictWriter(final, fieldnames=final_fieldnames)

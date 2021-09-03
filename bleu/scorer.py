@@ -24,11 +24,23 @@ def absatzweise(references, candidate):
     for ref in references:
         if len(ref) != len(candidate):
             raise Exception("references-candidate-mismatch")
-    return [corpus_bleu(list(map(list, zip(*[ref[index] for ref in references]))), can_absatz, smoothing_function=SmoothingFunction().method4) for index, can_absatz in enumerate(candidate)]
+    return [corpus_bleu(list(map(list, zip(*[ref[index] for ref in references]))),
+                        can_absatz,
+                        smoothing_function=SmoothingFunction().method4)
+            for index, can_absatz in enumerate(candidate)]
+
+
+def gesamt(references, candidate):
+    for ref in references:
+        if len(ref) != len(candidate):
+            raise Exception("references-candidate-mismatch")
+    new_refs = [[[token for line in ref[index] for token in line] for ref in references] for index, _ in enumerate(references[0])]
+    new_cands = [[token for line in can_absatz for token in line] for can_absatz in candidate]
+    return new_refs, new_cands, corpus_bleu(new_refs, new_cands)
 
 
 if __name__ == '__main__':
-    references = [read_file(path) for path in ("ina.txt", )]
+    references = [read_file(path) for path in ("ina.txt", "ina.txt")]
     candidate = read_file("mTurk.txt")
 
     scores = absatzweise(references, candidate)
@@ -39,4 +51,8 @@ if __name__ == '__main__':
     weighted_scores = [score * tok_a / token_gesamt for score, tok_a in zip(scores, token_anzahl)]
     avg_score = sum(weighted_scores)
 
-    print(f"scores:\t\t\t{scores}\nweighted scores:{weighted_scores}\n\n weighted_score_sum: {avg_score}")
+    ges_refs, ges_cands, ges_score = gesamt(references, candidate)
+
+    print(f"scores:\t\t\t{scores}\nweighted scores:{weighted_scores}\n\n weighted_score_sum: {avg_score}\n\n"
+          f"gesamtcorpusscore: {ges_score}")
+

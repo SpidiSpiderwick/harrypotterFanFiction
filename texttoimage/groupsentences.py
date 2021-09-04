@@ -18,13 +18,13 @@ selection = [k for k, v in cnt.items() if 1 < v < 3]
 finalselect = [k for k in usefulldata if k.get("Input.num") in selection]
 sortedfinalselect = sorted(finalselect, key=lambda k: int(k['Input.num']))
 
-with open("medium.txt", 'r', encoding='utf-8') as f:
+with open("tempdata/medium.txt", 'r', encoding='utf-8') as f:
     mid = json.load(f)
 
 selection = [int(x) for x in selection]
 print(x := list(set(mid).intersection(selection)))
 
-with open("deeptranslated-utf8.txt", 'r', encoding='utf-8') as dtranslate:
+with open("tempdata/deeptranslated-utf8.txt", 'r', encoding='utf-8') as dtranslate:
     translations = dtranslate.readlines()
 
 print(translations := [s.rstrip() for s in translations])

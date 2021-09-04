@@ -41,12 +41,12 @@ cp1252 = {
 }
 
 if __name__ == '__main__':
-    with open("links.csv", "r", encoding="windows-1252") as inf:
+    with open("tempdata/links.csv", "r", encoding="windows-1252") as inf:
         content = inf.read()
 
     # content = doubledecode(content)
 
-    with open("links.csv", "w+", encoding="utf-8") as outf:
+    with open("tempdata/links.csv", "w+", encoding="utf-8") as outf:
         outf.write(content)
 
 # with open("texttoimage/links.csv", "w+") as outf:

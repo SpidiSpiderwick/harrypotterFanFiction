@@ -7,9 +7,9 @@ if __name__ == '__main__':
 
     chapter_p = os.path.join(base_folder, "ch39")
 
-    short_p = os.path.join(base_folder, "short.txt")
-    medium_p = os.path.join(base_folder, "medium.txt")
-    long_p = os.path.join(base_folder, "long.txt")
+    short_p = os.path.join(base_folder, "tempdata/short.txt")
+    medium_p = os.path.join(base_folder, "tempdata/medium.txt")
+    long_p = os.path.join(base_folder, "tempdata/long.txt")
 
     with open(short_p, "r", encoding="utf-8") as short_f:
         short = json.load(short_f)
@@ -20,10 +20,10 @@ if __name__ == '__main__':
     with open(long_p, "r", encoding="utf-8") as long_f:
         long = json.load(long_f)
 
-    with open(os.path.join(base_folder, "links.csv"), "r", encoding="utf-8", newline="") as links_csv, \
-            open(os.path.join(base_folder, "short.csv"), "w+", encoding="utf-8", newline="") as short_csv_f, \
-            open(os.path.join(base_folder, "medium.csv"), "w+", encoding="utf-8", newline="") as medium_csv_f, \
-            open(os.path.join(base_folder, "long.csv"), "w+", encoding="utf-8", newline="") as long_csv_f:
+    with open(os.path.join(base_folder, "tempdata/links.csv"), "r", encoding="utf-8", newline="") as links_csv, \
+            open(os.path.join(base_folder, "tempdata/short.csv"), "w+", encoding="utf-8", newline="") as short_csv_f, \
+            open(os.path.join(base_folder, "tempdata/medium.csv"), "w+", encoding="utf-8", newline="") as medium_csv_f, \
+            open(os.path.join(base_folder, "tempdata/long.csv"), "w+", encoding="utf-8", newline="") as long_csv_f:
 
         short_csv = csv.DictWriter(short_csv_f, delimiter=",", quotechar='"', fieldnames=["num", "image_url", "suggestions", "gtrans", "dtrans"])
         short_csv.writeheader()

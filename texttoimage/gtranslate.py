@@ -17,6 +17,6 @@ def translate(text):
     return response.json()["data"]["translations"][0]["translatedText"]
 
 
-with open("REVhpsentences.txt", "r") as inf:
-    with open("gtranslated.txt", "w+") as outf:
+with open("tempdata/REVhpsentences.txt", "r") as inf:
+    with open("tempdata/gtranslated.txt", "w+") as outf:
         outf.writelines(translate(t) for t in inf.readlines())

@@ -1,4 +1,5 @@
 import csv
+import statistics
 
 asibf = []
 asiba = []
@@ -51,3 +52,17 @@ print("#########################################################################
 print(avgiaaa := (interAnnotatorAgreement(chrisa, asiba) + interAnnotatorAgreement(inaa, asiba) + interAnnotatorAgreement(inaa, chrisa))/3)
 print(avgiaaf := (interAnnotatorAgreement(chrisf, asibf) + interAnnotatorAgreement(inaf, asibf) + interAnnotatorAgreement(inaf, chrisf))/3)
 print((avgiaaa + avgiaaf)/2)
+
+shortall= []
+mediumall=[]
+with open('D:\Projects\harrypotterFanFiction\mTurkAbgaben\\task2\\Batch_4539948_batch_results.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        shortall.append(int(row['WorkTimeInSeconds']))
+
+with open('D:\Projects\harrypotterFanFiction\mTurkAbgaben\\task2\\Batch_4539950_batch_results.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        mediumall.append(int(row['WorkTimeInSeconds']))
+
+print(max(mediumall))
